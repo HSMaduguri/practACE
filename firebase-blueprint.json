@@ -1,0 +1,522 @@
+{
+  "entities": {
+    "PracticeAttempt": {
+      "title": "PracticeAttempt",
+      "description": "A record of an exam practice question attempt.",
+      "type": "object",
+      "properties": {
+        "questionId": {
+          "type": "string",
+          "description": "The ID of the question practiced."
+        },
+        "subjectId": {
+          "type": "string",
+          "enum": ["AFM", "FR", "Audit", "DT", "IDT", "IBS", "AdvAcc", "CorpLaw", "Tax", "Cost", "AuditInter", "FMSM", "Accounts", "Law", "MathStats", "Econ"],
+          "description": "The CA Final subject ID."
+        },
+        "chapterName": {
+          "type": "string",
+          "description": "The name of the syllabus chapter."
+        },
+        "isCorrect": {
+          "type": "boolean",
+          "description": "Indicates if the student's answer was correct."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO timestamp of the practice attempt."
+        }
+      },
+      "required": ["questionId", "subjectId", "chapterName", "isCorrect", "timestamp"]
+    },
+    "BookmarkedSection": {
+      "title": "BookmarkedSection",
+      "description": "A statutory section or rule bookmarked by a student.",
+      "type": "object",
+      "properties": {
+        "subjectId": {
+          "type": "string",
+          "enum": ["AFM", "FR", "Audit", "DT", "IDT", "IBS", "AdvAcc", "CorpLaw", "Tax", "Cost", "AuditInter", "FMSM", "Accounts", "Law", "MathStats", "Econ"],
+          "description": "The CA Final subject ID."
+        },
+        "number": {
+          "type": "string",
+          "description": "The section or rule number identifier."
+        },
+        "heading": {
+          "type": "string",
+          "description": "The title or heading of the section."
+        },
+        "purpose": {
+          "type": "string",
+          "description": "The summary of the section's statutory intention."
+        }
+      },
+      "required": ["subjectId", "number", "heading", "purpose"]
+    },
+    "BookmarkedQuestion": {
+      "title": "BookmarkedQuestion",
+      "description": "A high-priority past paper question bookmarked by a student from the Question Bank.",
+      "type": "object",
+      "properties": {
+        "questionId": {
+          "type": "string",
+          "description": "Unique identifier of the question in the Question Bank."
+        },
+        "subjectId": {
+          "type": "string",
+          "enum": ["AFM", "FR", "Audit", "DT", "IDT", "IBS", "AdvAcc", "CorpLaw", "Tax", "Cost", "AuditInter", "FMSM", "Accounts", "Law", "MathStats", "Econ"],
+          "description": "The CA Final subject ID."
+        },
+        "attempt": {
+          "type": "string",
+          "description": "Exam attempt code (e.g., May-26)."
+        },
+        "attemptLabel": {
+          "type": "string",
+          "description": "Formatted exam attempt label (e.g., May 2026)."
+        },
+        "questionNumber": {
+          "type": "string",
+          "description": "Question number identifier (e.g., Q1(a))."
+        },
+        "marks": {
+          "type": "integer",
+          "description": "Marks allocated to the question."
+        },
+        "chapterName": {
+          "type": "string",
+          "description": "Syllabus chapter name."
+        },
+        "topicTag": {
+          "type": "string",
+          "description": "Specific topic or concept tag of the question."
+        },
+        "questionPreview": {
+          "type": "string",
+          "description": "Concise preview of the question prompt."
+        },
+        "savedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO timestamp when the question was bookmarked."
+        }
+      },
+      "required": [
+        "questionId",
+        "subjectId",
+        "attempt",
+        "attemptLabel",
+        "questionNumber",
+        "marks",
+        "chapterName",
+        "topicTag",
+        "questionPreview",
+        "savedAt"
+      ]
+    },
+    "UserConfig": {
+      "title": "UserConfig",
+      "description": "User configuration settings including theme preference and scheduled on-screen timed practice settings.",
+      "type": "object",
+      "properties": {
+        "darkMode": {
+          "type": "boolean",
+          "description": "Indicates if the dark mode is enabled."
+        },
+        "hydrationSoundEnabled": {
+          "type": "boolean",
+          "description": "Indicates if the hydration reminder chime is enabled."
+        },
+        "preferred_practice_time": {
+          "type": "string",
+          "description": "User-selected daily on-screen practice display time in HH:mm 24-hour format."
+        },
+        "scheduled_practice_enabled": {
+          "type": "boolean",
+          "description": "Indicates whether scheduled on-screen timed practice display is enabled."
+        },
+        "last_practice_screen_date": {
+          "type": "string",
+          "description": "YYYY-MM-DD date string of the last scheduled on-screen practice display."
+        },
+        "practiced_question_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of previously practiced question IDs to avoid repeats."
+        },
+        "time_budget_mode": {
+          "type": "string",
+          "enum": ["icai_standard", "rapid_5m", "deep_15m"],
+          "description": "Timer budget allocation mode for scheduled on-screen practice questions."
+        },
+        "privacyScope": {
+          "type": "string",
+          "enum": ["public", "buddies", "private"],
+          "description": "Visibility scope for the student's study statistics."
+        },
+        "shareHours": {
+          "type": "boolean",
+          "description": "Whether to share study focus hours on dashboards."
+        },
+        "shareAccuracy": {
+          "type": "boolean",
+          "description": "Whether to share practice MCQ accuracy on dashboards."
+        },
+        "shareStreak": {
+          "type": "boolean",
+          "description": "Whether to share consistency streak days on dashboards."
+        },
+        "todayFocusMinutes": {
+          "type": "number",
+          "description": "Summary of today's logged focus minutes."
+        },
+        "totalFocusMinutes": {
+          "type": "number",
+          "description": "Summary of total cumulative focus minutes."
+        },
+        "practiceAccuracy": {
+          "type": "number",
+          "description": "Summary of practice MCQ accuracy percentage."
+        },
+        "practiceQuestionsCount": {
+          "type": "integer",
+          "description": "Total practice questions attempted."
+        },
+        "studyStreakDays": {
+          "type": "integer",
+          "description": "Consecutive study days streak."
+        },
+        "studentHandle": {
+          "type": "string",
+          "description": "Normalized lowercase unique custom username."
+        },
+        "displayHandle": {
+          "type": "string",
+          "description": "Case-preserved custom username for display."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO timestamp of when preference was saved."
+        },
+        "caLevel": {
+          "type": "string",
+          "enum": ["foundation", "intermediate", "final"],
+          "description": "Selected ICAI CA course level (foundation, intermediate, or final)."
+        }
+      },
+      "required": ["darkMode", "updatedAt"]
+    },
+    "RevisionPlannerSubjectData": {
+      "title": "RevisionPlannerSubjectData",
+      "description": "Subject-wise revision tracking with completed checkboxes and hours spent.",
+      "type": "object",
+      "properties": {
+        "subjectId": {
+          "type": "string",
+          "enum": ["AFM", "FR", "Audit", "DT", "IDT", "IBS", "AdvAcc", "CorpLaw", "Tax", "Cost", "AuditInter", "FMSM", "Accounts", "Law", "MathStats", "Econ"],
+          "description": "The CA Final subject ID."
+        },
+        "revisionsCount": {
+          "type": "integer",
+          "description": "The number of pre-exam revision loops to display."
+        },
+        "chapters": {
+          "type": "object",
+          "description": "A map of chapter titles to their revision progress statuses."
+        }
+      },
+      "required": ["subjectId", "revisionsCount", "chapters"]
+    },
+    "TaskList": {
+      "title": "TaskList",
+      "description": "A study board or task list created by the student.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The task list/board unique ID."
+        },
+        "title": {
+          "type": "string",
+          "description": "The title of the study board or task list."
+        },
+        "updated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO timestamp of last update."
+        }
+      },
+      "required": ["id", "title"]
+    },
+    "Task": {
+      "title": "Task",
+      "description": "An individual study action/target goal in the task list.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique ID of the task."
+        },
+        "title": {
+          "type": "string",
+          "description": "Task/Goal description title."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional notes or comments."
+        },
+        "due": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Optional scheduled day/due timestamp."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["needsAction", "completed", "unachieved"],
+          "description": "Status of the task."
+        },
+        "completed": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Optional date completed."
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["High", "Medium", "Low"],
+          "description": "Optional task priority levels."
+        },
+        "subjectCode": {
+          "type": "string",
+          "description": "Optional educational subject code."
+        },
+        "cleanTitle": {
+          "type": "string",
+          "description": "Optional clean title without prefix tags."
+        },
+        "listId": {
+          "type": "string",
+          "description": "Reference ID to the parent task list."
+        }
+      },
+      "required": ["id", "title", "status", "listId"]
+    },
+    "FocusSession": {
+      "title": "FocusSession",
+      "description": "A study timer focus session allocated to a subject.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique focus session ID."
+        },
+        "duration": {
+          "type": "integer",
+          "description": "Duration in minutes."
+        },
+        "subjectId": {
+          "type": "string",
+          "enum": ["AFM", "FR", "Audit", "DT", "IDT", "IBS", "AdvAcc", "CorpLaw", "Tax", "Cost", "AuditInter", "FMSM", "Accounts", "Law", "MathStats", "Econ"],
+          "description": "The allocated CA Final subject ID."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO timestamp of when the session was saved and allocated."
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional notes or comments about this study block."
+        },
+        "sessionType": {
+          "type": "string",
+          "enum": ["work", "break"],
+          "description": "Optional session type identifying whether study focus or break."
+        }
+      },
+      "required": ["id", "duration", "subjectId", "timestamp"]
+    },
+    "PeerRequest": {
+      "title": "PeerRequest",
+      "description": "A pending or processed study peer linkage request.",
+      "type": "object",
+      "properties": {
+        "fromUserId": { "type": "string" },
+        "fromUserHandle": { "type": "string" },
+        "fromUserName": { "type": "string" },
+        "fromUserEmote": { "type": "string" },
+        "toUserId": { "type": "string" },
+        "toUserHandle": { "type": "string" },
+        "toUserName": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "accepted", "declined"] },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["fromUserId", "fromUserHandle", "toUserId", "toUserHandle", "status", "timestamp"]
+    },
+    "StudyPeer": {
+      "title": "StudyPeer",
+      "description": "A linked study peer candidate for progress tracking.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "studentHandle": { "type": "string" },
+        "displayName": { "type": "string" },
+        "emote": { "type": "string" },
+        "coursePreference": { "type": "string" },
+        "addedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "studentHandle", "addedAt"]
+    },
+    "FlashcardRating": {
+      "title": "FlashcardRating",
+      "description": "A student's self-assessed confidence rating for an individual flashcard concept.",
+      "type": "object",
+      "properties": {
+        "cardId": {
+          "type": "string",
+          "description": "Unique identifier of the flashcard."
+        },
+        "subjectId": {
+          "type": "string",
+          "enum": ["AFM", "FR", "Audit", "DT", "IDT", "IBS", "AdvAcc", "CorpLaw", "Tax", "Cost", "AuditInter", "FMSM", "Accounts", "Law", "MathStats", "Econ"],
+          "description": "The CA Final subject ID."
+        },
+        "rating": {
+          "type": "integer",
+          "description": "Confidence level from 1 (lowest confidence / need help) to 5 (mastered / high confidence)."
+        },
+        "conceptTitle": {
+          "type": "string",
+          "description": "The concept question or title."
+        },
+        "category": {
+          "type": "string",
+          "description": "The chapter or topic of the concept."
+        },
+        "statutoryRef": {
+          "type": "string",
+          "description": "The statutory standard or section reference."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO timestamp of when the rating was set."
+        }
+      },
+      "required": ["cardId", "subjectId", "rating", "updatedAt"]
+    },
+    "PeerChatMessage": {
+      "title": "PeerChatMessage",
+      "description": "A real-time message exchanged between CA Final study peers.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "The message document unique ID." },
+        "senderId": { "type": "string", "description": "UID of the message sender." },
+        "senderName": { "type": "string", "description": "Display name of the sender." },
+        "senderEmote": { "type": "string", "description": "Visual emote identifier." },
+        "receiverId": { "type": "string", "description": "UID of the recipient, room ID, or 'group_lounge'." },
+        "text": { "type": "string", "description": "The statutory or coordination text content of the message." },
+        "timestamp": { "type": "string", "format": "date-time", "description": "ISO timestamp representing dispatch time." },
+        "msgType": { "type": "string", "enum": ["chat", "doubt", "request"], "description": "Classification tag of the message." },
+        "subjectTag": { "type": "string", "description": "CA Final paper code tag for doubts or material requests." },
+        "chapterTag": { "type": "string", "description": "Specific chapter or standard tag." },
+        "isResolved": { "type": "boolean", "description": "Whether a doubt or material request has been resolved." },
+        "resolvedBy": { "type": "string", "description": "Display name of the student who resolved the doubt." }
+      },
+      "required": ["id", "senderId", "senderName", "senderEmote", "receiverId", "text", "timestamp"]
+    },
+    "StudyRoom": {
+      "title": "StudyRoom",
+      "description": "A student-created group chat room for CA Final collaborative revision and doubt clearing.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique room identifier starting with room_." },
+        "name": { "type": "string", "description": "Room display title." },
+        "subjectId": { "type": "string", "description": "Target CA Final subject ID or General." },
+        "topic": { "type": "string", "description": "Room focus topic or chapter goal." },
+        "isPrivate": { "type": "boolean", "description": "True if protected by an invite code." },
+        "inviteCode": { "type": "string", "description": "Invite code required to unlock private rooms." },
+        "creatorId": { "type": "string", "description": "UID of the room creator." },
+        "creatorName": { "type": "string", "description": "Display name of the room creator." },
+        "memberIds": { "type": "array", "items": { "type": "string" }, "description": "List of participant UIDs." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "ISO timestamp of creation." }
+      },
+      "required": ["id", "name", "subjectId", "topic", "isPrivate", "creatorId", "creatorName", "createdAt"]
+    },
+    "UsernameRecord": {
+      "title": "UsernameRecord",
+      "description": "A case-insensitive first-come-first-served username registry record.",
+      "type": "object",
+      "properties": {
+        "normalizedHandle": { "type": "string", "description": "Lowercase normalized handle used as document ID." },
+        "displayHandle": { "type": "string", "description": "Case-preserved custom username." },
+        "uid": { "type": "string", "description": "Firebase Auth UID of the owner." },
+        "displayName": { "type": "string", "description": "Optional display name of the owner." },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "ISO timestamp of registration." }
+      },
+      "required": ["normalizedHandle", "displayHandle", "uid", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/usernames/{usernameId}": {
+      "schema": "UsernameRecord",
+      "description": "Canonical registry of all claimed custom usernames enforcing case-insensitive uniqueness on a first-come, first-served basis."
+    },
+    "/peerChats/{chatId}/messages/{messageId}": {
+      "schema": "PeerChatMessage",
+      "description": "Real-time communication logs between peers for discussing syllabus exceptions and organizing sprints."
+    },
+    "/studyRooms/{roomId}": {
+      "schema": "StudyRoom",
+      "description": "Student-created public and invite-code protected group chat rooms."
+    },
+    "/users/{userId}": {
+      "schema": "UserConfig",
+      "description": "User configuration settings."
+    },
+    "/users/{userId}/practiceAttempts/{attemptId}": {
+      "schema": "PracticeAttempt",
+      "description": "Individual practice session question attempts tracked per user."
+    },
+    "/users/{userId}/bookmarkedSections/{bookmarkId}": {
+      "schema": "BookmarkedSection",
+      "description": "Student's pinned favorite statutory sections for offline or quick review."
+    },
+    "/users/{userId}/bookmarkedQuestions/{questionId}": {
+      "schema": "BookmarkedQuestion",
+      "description": "Student's bookmarked high-priority Question Bank questions saved to My Bookmarks in Profile."
+    },
+    "/users/{userId}/revisionPlanner/{subjectId}": {
+      "schema": "RevisionPlannerSubjectData",
+      "description": "The student's custom revision tracking, checkbox milestones, and spent study hours."
+    },
+    "/users/{userId}/taskLists/{taskListId}": {
+      "schema": "TaskList",
+      "description": "The student's task lists or study boards."
+    },
+    "/users/{userId}/tasks/{taskId}": {
+      "schema": "Task",
+      "description": "The student's mapped goals inside various boards/lists."
+    },
+    "/users/{userId}/focusSessions/{sessionId}": {
+      "schema": "FocusSession",
+      "description": "The student's locked and allocated Pomodoro study focus sessions."
+    },
+    "/peerRequests/{requestId}": {
+      "schema": "PeerRequest",
+      "description": "Pending and completed study peer linkage requests between candidates."
+    },
+    "/users/{userId}/peers/{peerId}": {
+      "schema": "StudyPeer",
+      "description": "Accountability study peers tracked by the student."
+    },
+    "/users/{userId}/flashcardRatings/{ratingId}": {
+      "schema": "FlashcardRating",
+      "description": "Student confidence ratings for individual flashcards to identify and prioritize revision of weakest concepts."
+    }
+  }
+}

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practACE</title>
+    <meta name="description" content="Intelligent, exam-focused study assistant exclusively for CA Final (New Syllabus) students." />
+    <meta property="og:title" content="practACE" />
+    <meta property="og:description" content="Intelligent, exam-focused study assistant exclusively for CA Final (New Syllabus) students." />
+    <link rel="icon" type="image/svg+xml" href="/assets/aistudio/practCA_Logo_photo_e935f99f.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+    <script>
+      (function () {
+        if (typeof window === 'undefined') return;
+        var NativeWebSocket = window.WebSocket;
+        if (!NativeWebSocket) return;
+
+        function shouldUseSilentSocket(url, protocols) {
+          var urlStr = String(url || '');
+          var protoStr = Array.isArray(protocols) ? protocols.join(',') : String(protocols || '');
+          if (protoStr.indexOf('vite-hmr') !== -1 || protoStr.indexOf('vite-ping') !== -1) return true;
+          if (
+            urlStr.indexOf('24678') !== -1 ||
+            urlStr.indexOf('5173') !== -1 ||
+            urlStr.indexOf('token=') !== -1 ||
+            urlStr.indexOf('vite') !== -1 ||
+            urlStr.indexOf('localhost') !== -1 ||
+            urlStr.indexOf('127.0.0.1') !== -1 ||
+            (window.location && window.location.host && urlStr.indexOf(window.location.host) !== -1)
+          ) {
+            return true;
+          }
+          return false;
+        }
+
+        function createSilentWebSocket(url, protocols) {
+          var target = new EventTarget();
+          var ws = {
+            CONNECTING: 0,
+            OPEN: 1,
+            CLOSING: 2,
+            CLOSED: 3,
+            url: String(url || ''),
+            readyState: 1,
+            protocol: Array.isArray(protocols) ? (protocols[0] || '') : String(protocols || ''),
+            extensions: '',
+            bufferedAmount: 0,
+            binaryType: 'blob',
+            onopen: null,
+            onmessage: null,
+            onerror: null,
+            onclose: null,
+            addEventListener: function (type, listener, options) {
+              target.addEventListener(type, listener, options);
+            },
+            removeEventListener: function (type, listener, options) {
+              target.removeEventListener(type, listener, options);
+            },
+            dispatchEvent: function (event) {
+              return target.dispatchEvent(event);
+            },
+            send: function () {},
+            close: function () {
+              ws.readyState = 3;
+            }
+          };
+
+          setTimeout(function () {
+            try {
+              var openEvt = new Event('open');
+              if (typeof ws.onopen === 'function') ws.onopen(openEvt);
+              target.dispatchEvent(openEvt);
+
+              var msgEvt = new MessageEvent('message', {
+                data: JSON.stringify({ type: 'connected' })
+              });
+              if (typeof ws.onmessage === 'function') ws.onmessage(msgEvt);
+              target.dispatchEvent(msgEvt);
+            } catch (e) {}
+          }, 0);
+
+          return ws;
+        }
+
+        function SafeWebSocket(url, protocols) {
+          if (shouldUseSilentSocket(url, protocols)) {
+            return createSilentWebSocket(url, protocols);
+          }
+          try {
+            var instance = protocols !== undefined
+              ? new NativeWebSocket(url, protocols)
+              : new NativeWebSocket(url);
+            instance.addEventListener('error', function (e) {
+              e.stopImmediatePropagation();
+            }, true);
+            return instance;
+          } catch (err) {
+            return createSilentWebSocket(url, protocols);
+          }
+        }
+
+        SafeWebSocket.CONNECTING = 0;
+        SafeWebSocket.OPEN = 1;
+        SafeWebSocket.CLOSING = 2;
+        SafeWebSocket.CLOSED = 3;
+        SafeWebSocket.prototype = NativeWebSocket.prototype;
+        window.WebSocket = SafeWebSocket;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

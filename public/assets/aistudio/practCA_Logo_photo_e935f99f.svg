@@ -1,0 +1,18 @@
+<svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="1000" rx="160" fill="#00122B" />
+  <defs>
+    <linearGradient id="goldGrad" x1="180" y1="120" x2="880" y2="820" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EAC15A" />
+      <stop offset="45%" stop-color="#DDA93E" />
+      <stop offset="100%" stop-color="#C28B28" />
+    </linearGradient>
+    <filter id="bookShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="-4" dy="6" stdDeviation="5" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+  <g filter="url(#bookShadow)">
+    <path d="M 198 332 L 234 344 L 234 706 C 315 690 420 712 494 795 C 568 712 673 690 754 706 L 754 448 L 790 410 L 790 748 C 678 728 566 750 494 834 C 422 750 310 728 198 748 Z" fill="url(#goldGrad)" />
+    <path d="M 260 294 C 355 308 440 355 498 442 C 435 382 358 354 296 344 L 296 642 C 365 650 438 696 494 792 C 428 720 345 678 260 672 Z" fill="url(#goldGrad)" />
+    <path d="M 391 472 L 475 556 L 786 206 L 742 165 L 928 98 L 895 298 L 836 250 L 473 660 L 342 521 Z" fill="url(#goldGrad)" />
+  </g>
+</svg>

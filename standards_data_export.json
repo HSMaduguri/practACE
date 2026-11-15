@@ -1,0 +1,606 @@
+[
+  {
+    "code": "SQC 1",
+    "category": "Quality Control",
+    "series": "SQC",
+    "title": "Quality Control for Firms that Perform Audits and Reviews of Historical Financial Information, and Other Assurance and Related Services Engagements",
+    "scope": "Applies to all CA firms for all engagements (audits, reviews, assurance, related services). Establishes firm-level responsibilities for a robust system of quality control.",
+    "keyProvisions": [
+      "Leadership Responsibilities: CEO/Managing Partner assumes ultimate responsibility; quality culture prioritized over commercial profitability.",
+      "Ethical Requirements: Integrity, Objectivity, Professional Competence & Due Care, Confidentiality, Professional Behaviour; mandatory annual written independence confirmations.",
+      "Acceptance & Continuance: Integrity of client management, firm competence/time/resources, compliance with ethical requirements, prior auditor communication.",
+      "Human Resources: Recruitment, CPD, performance appraisal, capabilities, and assignment of engagement teams.",
+      "Engagement Performance: Supervision, review, consultation on contentious matters, resolving differences of opinion.",
+      "Engagement Quality Control Review (EQCR): Mandatory for all listed entity audits; review must be completed BEFORE the audit report is issued.",
+      "Assembly & Retention: Final file assembly within 60 days of audit report date; minimum retention period of 7 years from report date."
+    ],
+    "examFocus": "EQCR sign-off timing, working paper retention (7 years), 60-day assembly, annual independence confirmations, and partner rotation."
+  },
+  {
+    "code": "SA 200",
+    "category": "General Principles",
+    "series": "200 Series",
+    "title": "Overall Objectives of the Independent Auditor and the Conduct of an Audit in Accordance with Standards on Auditing",
+    "scope": "Sets overarching objectives, reasonable assurance concept, professional skepticism, and professional judgment for financial statement audits.",
+    "keyProvisions": [
+      "Overall Objectives: Obtain reasonable assurance that financial statements as a whole are free from material misstatement (fraud/error); express an opinion and report in accordance with SAs.",
+      "Reasonable Assurance: High, but not absolute, level of assurance due to inherent limitations of an audit.",
+      "Inherent Limitations: Nature of financial reporting (estimates), nature of audit procedures (collusion, non-disclosure), balance between benefit and cost (timeliness/practical constraints).",
+      "Professional Skepticism: Questioning mind, alert to conditions indicating possible misstatement, critical assessment of audit evidence.",
+      "Professional Judgment: Application of training, knowledge and experience in making informed decisions about audit procedures and evidence."
+    ],
+    "examFocus": "Reasonable assurance vs absolute assurance, inherent limitations of audit, distinction between skepticism and judgment."
+  },
+  {
+    "code": "SA 210",
+    "category": "General Principles",
+    "series": "200 Series",
+    "title": "Agreeing the Terms of Audit Engagements",
+    "scope": "Preconditions for an audit, audit engagement letter contents, recurring audits, and acceptance of changes in engagement terms.",
+    "keyProvisions": [
+      "Preconditions for Audit: Determine acceptability of financial reporting framework (FRF); obtain management agreement acknowledging premise of audit (preparation of FS, internal control, unrestricted access/information).",
+      "Engagement Letter Contents: Objective and scope, responsibilities of auditor, responsibilities of management, identification of applicable FRF, expected form and content of reports.",
+      "Recurring Audits: Auditor evaluates whether circumstances require revision in terms or reminding entity of existing terms.",
+      "Change in Terms: Auditor shall not agree to change terms where there is no reasonable justification. If unable to agree and prohibited from continuing, withdraw and determine reporting duties."
+    ],
+    "examFocus": "Preconditions verification, reasons to revise engagement letter in recurring audits, management requests for lower assurance (audit to review)."
+  },
+  {
+    "code": "SA 220",
+    "category": "Quality Control",
+    "series": "200 Series",
+    "title": "Quality Control for an Audit of Financial Statements",
+    "scope": "Specific responsibilities of the engagement partner regarding quality control procedures at the individual audit engagement level.",
+    "keyProvisions": [
+      "Leadership: Engagement partner takes responsibility for overall quality on each audit engagement.",
+      "Relevant Ethical Requirements: Partner remains alert to non-compliance by engagement team members; takes appropriate action regarding independence.",
+      "Acceptance/Continuance: Partner satisfies that appropriate procedures have been followed and conclusions are appropriate.",
+      "Assignment of Teams: Partner ensures team possesses appropriate competence, capabilities, and time.",
+      "Direction, Supervision & Performance: Review work of team members; ensure consultations on difficult or contentious matters.",
+      "EQCR: Partner must not issue report until EQCR is completed; discuss significant findings with EQCR reviewer."
+    ],
+    "examFocus": "Responsibilities of engagement partner vs firm, EQCR duties before report issuance, difference of opinion resolution."
+  },
+  {
+    "code": "SA 230",
+    "category": "General Principles",
+    "series": "200 Series",
+    "title": "Audit Documentation",
+    "scope": "Auditor's responsibility to prepare documentation for an audit of financial statements ('working papers').",
+    "keyProvisions": [
+      "Form, Content & Extent: Sufficient to enable an experienced auditor, having no previous connection, to understand NTE of procedures, results/evidence, and significant matters.",
+      "Assembly of Final File: Administrative process not involving new procedures; completed within 60 days after the date of the auditor's report.",
+      "Retention Period: Firm shall retain audit documentation for at least 7 years from the date of the auditor's report.",
+      "Ownership & Confidentiality: Working papers are the property of the auditor (SQC 1); confidential under Clause 1 Part I First Schedule, subject to legal/regulatory production.",
+      "Documentation of Departure: If departing from a relevant requirement in an SA, document reason and alternative procedures."
+    ],
+    "examFocus": "Assembly within 60 days, retention for 7 years, ownership of working papers, experienced auditor test, departure documentation."
+  },
+  {
+    "code": "SA 240",
+    "category": "General Principles",
+    "series": "200 Series",
+    "title": "The Auditor's Responsibilities Relating to Fraud in an Audit of Financial Statements",
+    "scope": "Responsibilities relating to fraud, fraud risk factors, management override of controls, and statutory fraud reporting.",
+    "keyProvisions": [
+      "Two Types of Intentional Misstatement: Fraudulent financial reporting (falsification, misrepresentation, intentional misapplication) and Misappropriation of assets (theft, embezzlement).",
+      "Fraud Risk Triangle: Incentive/Pressure, Opportunity, and Rationalization/Attitude.",
+      "Mandatory Procedures for Management Override: Test journal entries across period-end, review accounting estimates for bias (retrospective review), evaluate business rationale of significant unusual transactions.",
+      "Reporting to TCWG & Regulators: Report all identified/suspected frauds to management/TCWG; statutory duty under Section 143(12) of Companies Act to report fraud >= \u20b91 Crore to Central Govt in Form ADT-4 within 60 days."
+    ],
+    "examFocus": "Three mandatory management override tests, Section 143(12) 2-day/45-day/15-day reporting sequence, fraud risk indicators."
+  },
+  {
+    "code": "SA 250",
+    "category": "General Principles",
+    "series": "200 Series",
+    "title": "Consideration of Laws and Regulations in an Audit of Financial Statements",
+    "scope": "Auditor's responsibility to consider laws and regulations in an audit of financial statements.",
+    "keyProvisions": [
+      "Two Categories of Laws: (1) Direct effect on FS amounts and disclosures (tax laws, pension laws); (2) Indirect effect fundamental to operating aspects (licensing, environmental, pollution control, safety).",
+      "Auditor's Procedures: Direct laws: obtain sufficient appropriate audit evidence. Indirect laws: inquire of management and inspect correspondence with licensing authorities.",
+      "Non-Compliance Identified: Understand nature of act, evaluate financial statement implications, discuss with management/TCWG.",
+      "Reporting: Report to TCWG; modify opinion if material effect not reflected; evaluate disclosure to regulatory authorities (NOCLAR framework for listed entities)."
+    ],
+    "examFocus": "Direct vs indirect laws, auditor duties when non-compliance suspected, NOCLAR escalation hierarchy."
+  },
+  {
+    "code": "SA 260 (Revised)",
+    "category": "General Principles",
+    "series": "200 Series",
+    "title": "Communication with Those Charged with Governance",
+    "scope": "Auditor's responsibility to communicate with those charged with governance (TCWG) in an audit.",
+    "keyProvisions": [
+      "Matters to Communicate: Auditor's responsibilities under SAs, planned scope and timing of audit, significant findings (accounting policies, estimates, disclosures), auditor independence (for listed entities).",
+      "Communication Process: Establish clear communication channels; oral or written form (significant findings must be in writing if oral deemed inappropriate).",
+      "Adequacy Evaluation: Auditor evaluates whether two-way communication between auditor and TCWG has been adequate; if inadequate, consider implications for opinion."
+    ],
+    "examFocus": "Mandatory written communication on independence for listed entities, communication of significant audit difficulties."
+  },
+  {
+    "code": "SA 265",
+    "category": "General Principles",
+    "series": "200 Series",
+    "title": "Communicating Deficiencies in Internal Control to Those Charged with Governance and Management",
+    "scope": "Auditor's responsibility to communicate appropriately to TCWG and management deficiencies in internal control identified in the audit.",
+    "keyProvisions": [
+      "Significant Deficiency: Deficiency or combination that, in auditor's professional judgment, is of sufficient importance to merit attention of TCWG.",
+      "Communication Mandate: Communicate significant deficiencies in writing to TCWG on a timely basis; communicate other deficiencies of sufficient importance to management.",
+      "Written Communication Content: Description of deficiencies, explanation of potential effects, contextual disclaimer that audit was not designed to express opinion on internal control."
+    ],
+    "examFocus": "Mandatory written communication of significant deficiencies to TCWG, indicator examples of significant deficiencies."
+  },
+  {
+    "code": "SA 299 (Revised)",
+    "category": "General Principles",
+    "series": "200 Series",
+    "title": "Joint Audit of Financial Statements",
+    "scope": "Division of work, joint and several liability, coordination, and reporting by joint auditors.",
+    "keyProvisions": [
+      "Division of Work: Joint auditors allocate audit work based on mutual agreement (by business units, functions, assets/liabilities); documented in work allocation plan.",
+      "Individual Responsibility: Each joint auditor is solely responsible for audit procedures performed on work allocated to them.",
+      "Joint and Several Liability: Work not divided; decisions taken jointly; compliance with disclosure requirements of FRF; compliance with statutory reporting formats; ensuring audit report complies with SAs.",
+      "Reporting & Disagreement: Joint auditors usually issue a joint report. If disagreement on opinion, each joint auditor expresses own opinion through separate report; no majority rule; cross-refer other report in Other Matter paragraph."
+    ],
+    "examFocus": "Five grounds of joint & several liability, procedure when joint auditors disagree on opinion (separate reports, OM paragraph)."
+  },
+  {
+    "code": "SA 300",
+    "category": "Planning & Risk",
+    "series": "300 Series",
+    "title": "Planning an Audit of Financial Statements",
+    "scope": "Auditor's responsibility to plan an audit of financial statements; overall audit strategy and audit plan.",
+    "keyProvisions": [
+      "Overall Audit Strategy: Sets scope, timing, and direction of audit; guides development of more detailed audit plan; resources allocation.",
+      "Audit Plan: Detailed procedures; covers NTE of risk assessment procedures (SA 315), NTE of further audit procedures (SA 330), and other planned procedures.",
+      "Continuous & Dynamic Process: Planning is not a discrete phase; updated and changed as necessary during audit upon new information.",
+      "Direction & Supervision: Plan the NTE of direction and supervision of engagement team members and review of their work."
+    ],
+    "examFocus": "Strategy vs Plan distinction, contents of detailed audit plan, reasons to update audit strategy dynamically."
+  },
+  {
+    "code": "SA 315",
+    "category": "Planning & Risk",
+    "series": "300 Series",
+    "title": "Identifying and Assessing the Risks of Material Misstatement Through Understanding the Entity and Its Environment",
+    "scope": "Auditor's responsibility to identify and assess risks of material misstatement at financial statement and assertion levels.",
+    "keyProvisions": [
+      "Five Components of Internal Control: (1) Control Environment, (2) Entity's Risk Assessment Process, (3) Information System & Business Processes, (4) Control Activities, (5) Monitoring of Controls.",
+      "Risk Assessment Procedures: Inquiries, analytical procedures, observation, and inspection.",
+      "Significant Risks: Identified and assessed risks that require special audit consideration (fraud risk, complex transactions, related party transactions, significant estimation subjectivity).",
+      "IT Environment Understanding: General IT Controls (GITCs) and Automated Application Controls."
+    ],
+    "examFocus": "5 components of internal control, evaluation of control environment, criteria designating a significant risk."
+  },
+  {
+    "code": "SA 320",
+    "category": "Planning & Risk",
+    "series": "300 Series",
+    "title": "Materiality in Planning and Performing an Audit",
+    "scope": "Concept of materiality in planning and performing audit, performance materiality, and revision during audit.",
+    "keyProvisions": [
+      "Materiality: Misstatements, including omissions, considered material if they, individually or in aggregate, could reasonably influence economic decisions of users.",
+      "Determining Materiality: Benchmark selection (PBT, total revenue, gross profit, total equity, net assets) applied with percentage.",
+      "Performance Materiality: Amount set below materiality for FS as a whole to reduce to appropriately low level the probability that aggregate uncorrected/undetected misstatements exceed FS materiality.",
+      "Revision as Audit Progresses: Materiality must be revised if auditor becomes aware of information that would have caused determining different amount initially."
+    ],
+    "examFocus": "Performance materiality purpose and computation, benchmark criteria, downward revision of materiality implications."
+  },
+  {
+    "code": "SA 330",
+    "category": "Planning & Risk",
+    "series": "300 Series",
+    "title": "The Auditor's Responses to Assessed Risks",
+    "scope": "Designing and implementing responses to assessed risks of material misstatement at financial statement and assertion levels.",
+    "keyProvisions": [
+      "Overall Responses: Emphasizing professional skepticism, assigning more experienced staff/experts, providing more supervision, incorporating unpredictability.",
+      "Tests of Controls (ToC): Mandatory when risk assessment anticipates operating effectiveness, or when substantive procedures alone cannot provide sufficient appropriate evidence (highly automated systems).",
+      "Rotational Testing of Controls: Must test controls once every 3 years; must test in current year if significant risk or if control has changed.",
+      "Substantive Procedures: Irrespective of assessed risks, auditor must perform substantive procedures for each material class of transactions, account balance, and disclosure."
+    ],
+    "examFocus": "Mandatory ToC situations, 3-year rotational testing rules and exceptions, dual-purpose tests."
+  },
+  {
+    "code": "SA 402",
+    "category": "Planning & Risk",
+    "series": "400 Series",
+    "title": "Audit Considerations Relating to an Entity Using a Service Organisation",
+    "scope": "User auditor's responsibilities when an entity uses the services of one or more service organisations.",
+    "keyProvisions": [
+      "Understanding Services: Understand nature of services provided, terms of contract, interaction between user entity and service org controls.",
+      "Type 1 Report: Report on description and design of controls at a service organization at a specific date.",
+      "Type 2 Report: Report on description, design AND operating effectiveness of controls throughout a specified period (minimum 6 months).",
+      "Auditor's Report: User auditor shall NOT refer to service auditor's report in an unmodified audit report. Reference allowed only if required by law or to explain modification."
+    ],
+    "examFocus": "Type 1 vs Type 2 report differences, use of Type 2 report as audit evidence, prohibition of reference in unmodified report."
+  },
+  {
+    "code": "SA 450",
+    "category": "Planning & Risk",
+    "series": "400 Series",
+    "title": "Evaluation of Misstatements Identified During the Audit",
+    "scope": "Evaluating the effect of identified misstatements on the audit and of uncorrected misstatements on financial statements.",
+    "keyProvisions": [
+      "Accumulation of Misstatements: Accumulate all misstatements other than those clearly trivial.",
+      "Communication to Management: Timely communicate all accumulated misstatements to appropriate level; request management to correct them.",
+      "Uncorrected Misstatements: Reassess materiality; determine whether uncorrected misstatements are material, individually or in aggregate.",
+      "Written Representations: Obtain representation from management/TCWG that uncorrected misstatements are immaterial, both individually and in aggregate."
+    ],
+    "examFocus": "Clearly trivial threshold vs materiality, management refusal to correct misstatements, written representation requirements."
+  },
+  {
+    "code": "SA 500",
+    "category": "Audit Evidence",
+    "series": "500 Series",
+    "title": "Audit Evidence",
+    "scope": "What constitutes audit evidence, sufficiency and appropriateness, and procedures to obtain evidence.",
+    "keyProvisions": [
+      "Sufficiency & Appropriateness: Sufficiency measures quantity (affected by RMM and quality); Appropriateness measures quality (relevance and reliability).",
+      "Reliability Hierarchy: External > Internal; Direct auditor observation > Indirect/Inquiry; Documentary > Oral; Original documents > Photocopies/faxes.",
+      "Methods to Obtain Evidence: Inspection, Observation, External Confirmation, Recalculation, Reperformance, Analytical Procedures, Inquiry.",
+      "Information Produced by Entity (IPE): Test accuracy and completeness of system-generated data."
+    ],
+    "examFocus": "Reliability hierarchy rules, testing of management expert information, verification of IPE."
+  },
+  {
+    "code": "SA 501",
+    "category": "Audit Evidence",
+    "series": "500 Series",
+    "title": "Audit Evidence - Specific Considerations for Selected Items",
+    "scope": "Specific considerations regarding inventory existence and condition, litigation and claims, and segment information.",
+    "keyProvisions": [
+      "Inventory Physical Count: If material, auditor must attend physical inventory counting unless impracticable.",
+      "Impracticability: General difficulty/time/expense is NOT valid excuse; must perform alternative procedures (inspect subsequent sales).",
+      "Inventory with Third Party: Request confirmation from third party or perform inspection/attend count.",
+      "Litigation & Claims: Direct communication with entity's external legal counsel via inquiry letter prepared by management and sent by auditor.",
+      "Management Refusal / Lawyer Non-response: Modify audit report (qualified or disclaimer) due to scope limitation."
+    ],
+    "examFocus": "Impracticability vs inconvenience in count attendance, procedures for third-party inventory, direct lawyer inquiry letter."
+  },
+  {
+    "code": "SA 505",
+    "category": "Audit Evidence",
+    "series": "500 Series",
+    "title": "External Confirmations",
+    "scope": "Auditor's use of external confirmation procedures to obtain audit evidence in accordance with SA 330 and SA 500.",
+    "keyProvisions": [
+      "Positive vs Negative Confirmation: Positive requests response in all cases; Negative requests response ONLY if disagreeing (less persuasive).",
+      "Conditions for Negative Confirmation: (1) Low RMM, (2) Large population of small balances, (3) Very low exception rate expected, (4) No reason to believe recipients will disregard.",
+      "Management Refusal to Allow Confirmation: Inquire reasons; evaluate validity; evaluate implications on RMM and fraud risk; perform alternative procedures.",
+      "Refusal Unreasonable or No Alternative Evidence: Communicate to TCWG and determine implications for audit opinion (Scope limitation)."
+    ],
+    "examFocus": "Management refusal handling sequence, four strict criteria for negative confirmations, electronic confirmation verification."
+  },
+  {
+    "code": "SA 510",
+    "category": "Audit Evidence",
+    "series": "500 Series",
+    "title": "Initial Audit Engagements - Opening Balances",
+    "scope": "Auditor's responsibilities relating to opening balances in an initial audit engagement (prior year unaudited or audited by predecessor).",
+    "keyProvisions": [
+      "Objective: Obtain evidence that opening balances do not contain misstatements materially affecting current period, and accounting policies consistently applied.",
+      "Procedures: Read most recent FS and predecessor auditor's report; evaluate whether prior closing balances correctly brought forward; review predecessor working papers (if permitted).",
+      "Audit Report Implications: If unable to obtain sufficient appropriate evidence regarding opening balances -> Qualified or Disclaimer of Opinion.",
+      "Misstatement in Opening Balances: If misstatement exists and not corrected/disclosed -> Qualified or Adverse Opinion."
+    ],
+    "examFocus": "Reporting options for unverified opening balances, consistency of accounting policies, predecessor auditor coordination."
+  },
+  {
+    "code": "SA 520",
+    "category": "Audit Evidence",
+    "series": "500 Series",
+    "title": "Analytical Procedures",
+    "scope": "Auditor's use of analytical procedures as substantive procedures ('substantive analytical procedures') and at overall review stage.",
+    "keyProvisions": [
+      "Substantive Analytical Procedures: Evaluations of financial information through analysis of plausible relationships among financial and non-financial data.",
+      "Four Factors for Reliance: (1) Suitability of analytical procedures for assertions, (2) Reliability of data, (3) Precision of expectation developed, (4) Acceptable difference threshold.",
+      "Investigation of Differences: Inquire of management and obtain corroborative audit evidence; perform other audit procedures.",
+      "Mandatory Stage: Analytical procedures are MANDATORY near the end of the audit to form an overall conclusion on consistency of FS."
+    ],
+    "examFocus": "Substantive analytical testing factors, investigation of unusual fluctuations, mandatory end-of-audit analytical review."
+  },
+  {
+    "code": "SA 530",
+    "category": "Audit Evidence",
+    "series": "500 Series",
+    "title": "Audit Sampling",
+    "scope": "Auditor's use of statistical and non-statistical sampling when designing and selecting the audit sample, and evaluating results.",
+    "keyProvisions": [
+      "Sampling Risk: Risk that auditor's conclusion based on a sample may differ from conclusion if entire population were tested.",
+      "Two Types of Sampling Risk: Risk of under-reliance/incorrect rejection (affects efficiency); Risk of over-reliance/incorrect acceptance (affects effectiveness - leads to wrong opinion).",
+      "Sample Selection Methods: Random sampling, Systematic selection, Monetary Unit Sampling (MUS), Haphazard selection, Block selection (rarely appropriate).",
+      "Projecting Misstatements: Auditor must project monetary misstatements found in sample to the population."
+    ],
+    "examFocus": "Sampling risk vs non-sampling risk, evaluation of sample deviation rates, projection of misstatement."
+  },
+  {
+    "code": "SA 540 (Revised)",
+    "category": "Audit Evidence",
+    "series": "500 Series",
+    "title": "Auditing Accounting Estimates and Related Disclosures",
+    "scope": "Auditor's responsibilities relating to accounting estimates, including fair value estimates and related disclosures in an audit.",
+    "keyProvisions": [
+      "Estimation Uncertainty: Susceptibility of an accounting estimate to an inherent lack of precision in its measurement.",
+      "Retrospective Review: Review outcome of previous period estimates to evaluate effectiveness of management's estimation process and identify management bias.",
+      "Auditor's Responses: Test how management made estimate and data used; test operating effectiveness of controls; develop independent point estimate or range.",
+      "Indicators of Management Bias: Subjective changes in estimation methodology, selecting favorable assumptions within range."
+    ],
+    "examFocus": "Retrospective review of prior year estimates, indicators of management bias, testing assumptions and models."
+  },
+  {
+    "code": "SA 550",
+    "category": "Audit Evidence",
+    "series": "500 Series",
+    "title": "Related Parties",
+    "scope": "Auditor's responsibilities regarding related party relationships and transactions in an audit of financial statements.",
+    "keyProvisions": [
+      "Inherent Risk: Related parties operate through complex structures; controls may be ineffective or bypassed; transactions may lack business rationale.",
+      "Procedures: Inquire of management regarding identity, changes, nature of relationships, and transactions; inspect bank/legal confirmations, shareholder minutes, contracts.",
+      "Undisclosed Related Parties Identified: Promptly communicate to engagement team; request management to identify all transactions; inquire why controls failed; perform substantive procedures; reconsider fraud risk.",
+      "Arm's Length Claims: If management asserts transactions were at arm's length, auditor must obtain sufficient evidence supporting the assertion."
+    ],
+    "examFocus": "Action protocol on discovering undisclosed related party, arm's length claim verification, significant transactions outside normal course."
+  },
+  {
+    "code": "SA 560",
+    "category": "Audit Evidence",
+    "series": "500 Series",
+    "title": "Subsequent Events",
+    "scope": "Auditor's responsibilities relating to subsequent events (events between date of FS and date of auditor's report, and facts discovered after report).",
+    "keyProvisions": [
+      "Two Types of Events (Ind AS 10 / AS 4): Adjusting events (conditions existed at balance sheet date); Non-adjusting events (conditions arose subsequent to balance sheet date - disclose only).",
+      "Procedures up to Report Date: Inquire management, inspect latest interim statements, inspect minutes of meetings, read subsequent budgets/forecasts.",
+      "Facts Known After Report Date but Before Issue: Discuss with management; determine whether FS need amendment. If amended, issue new report or dual date. If management refuses, notify TCWG and take steps to prevent reliance.",
+      "Facts Known After Financial Statements Issued: Inquire management; if amended, review management steps to inform recipients; issue new report with EoM/OM."
+    ],
+    "examFocus": "Adjusting vs non-adjusting classification, auditor action when management refuses amendment before and after issuance, dual dating."
+  },
+  {
+    "code": "SA 570 (Revised)",
+    "category": "Audit Evidence",
+    "series": "500 Series",
+    "title": "Going Concern",
+    "scope": "Auditor's responsibilities regarding going concern assumption and disclosures in the audit of financial statements.",
+    "keyProvisions": [
+      "Management Assessment Period: Management must assess going concern for at least 12 months from the balance sheet date.",
+      "Events/Conditions: Financial (negative net worth, debt default), Operating (loss of key management/market/license), Other (litigation, statutory changes).",
+      "Appropriate but Material Uncertainty Exists & Adequately Disclosed: Unmodified opinion with a separate 'Material Uncertainty Related to Going Concern' (MURGC) paragraph.",
+      "Material Uncertainty Exists but Inadequately Disclosed: Qualified or Adverse Opinion (stating clearly in Basis paragraph that material uncertainty exists and is not disclosed).",
+      "Inappropriate Going Concern Assumption: Adverse Opinion (even if fully disclosed in financial statement notes)."
+    ],
+    "examFocus": "Decision matrix: Adequate disclosure = MURGC paragraph; Inadequate disclosure = Qualified/Adverse; Inappropriate basis = Adverse opinion."
+  },
+  {
+    "code": "SA 580",
+    "category": "Audit Evidence",
+    "series": "500 Series",
+    "title": "Written Representations",
+    "scope": "Auditor's responsibility to obtain written representations from management and TCWG in an audit.",
+    "keyProvisions": [
+      "Nature of Written Representations: Necessary audit evidence, but do NOT provide sufficient appropriate evidence on their own about any matter.",
+      "Date and Period: Date shall be as near as practicable to, but NOT after, the date of the auditor's report.",
+      "Mandatory Representations: Preparation of FS according to FRF, all information and access provided, all transactions recorded, uncorrected misstatements immaterial.",
+      "Refusal to Provide: If management refuses to provide representation on basic responsibilities -> Disclaimer of Opinion. On specific assertion -> evaluate effect and consider Qualified or Disclaimer."
+    ],
+    "examFocus": "Written representation is corroborative not primary, date matching report date, consequence of refusal (disclaimer of opinion)."
+  },
+  {
+    "code": "SA 600",
+    "category": "Using Work of Others",
+    "series": "600 Series",
+    "title": "Using the Work of Another Auditor",
+    "scope": "Principal auditor's responsibilities when using work of another auditor regarding financial information of components (branches, subsidiaries, JVs).",
+    "keyProvisions": [
+      "Principal Auditor Rights: Visit component, examine books if necessary, require other auditor to answer questionnaires.",
+      "Division of Responsibility: Principal auditor is entitled to rely on other auditor's work; not responsible for component auditor's work unless reasons for suspicion.",
+      "Documentation: Document components audited by others, names of auditors, materiality of components, procedures performed.",
+      "Reporting & Disclosure: Expressly disclose in Other Matter (OM) paragraph the division of responsibility, stating extent of assets/revenues audited by component auditors."
+    ],
+    "examFocus": "Division of responsibility disclosure in Other Matter paragraph, questionnaire review, right to visit components."
+  },
+  {
+    "code": "SA 610 (Revised)",
+    "category": "Using Work of Others",
+    "series": "600 Series",
+    "title": "Using the Work of Internal Auditors",
+    "scope": "External auditor's evaluation and use of internal audit function's work, and direct assistance from internal auditors.",
+    "keyProvisions": [
+      "Three Criteria to Use Work: (1) Objectivity of internal audit function (reporting line), (2) Level of competence, (3) Systematic and disciplined approach (quality control).",
+      "Prohibition on Direct Assistance in India: Under ICAI Council decision, statutory auditors in India are PROHIBITED from using internal auditors to provide direct assistance.",
+      "Areas where Internal Work CANNOT be Used: Involving significant judgment, high assessed RMM/fraud risk, decisions on materiality, reporting."
+    ],
+    "examFocus": "3 evaluation criteria, absolute prohibition of direct assistance in India, areas requiring external auditor's exclusive judgment."
+  },
+  {
+    "code": "SA 620",
+    "category": "Using Work of Others",
+    "series": "600 Series",
+    "title": "Using the Work of an Auditor's Expert",
+    "scope": "Using work of an individual or organization possessing expertise in a field other than accounting or auditing.",
+    "keyProvisions": [
+      "Auditor's Expert vs Management's Expert: Auditor's expert is engaged by auditor to assist auditor (governed by SA 620). Management's expert is used by management to prepare FS (governed by SA 500).",
+      "Evaluating Competence & Objectivity: Evaluate competence, capabilities, and objectivity (inquire about financial interests, relationships).",
+      "Agreement: Scope of work, roles and responsibilities, confidentiality, communication.",
+      "Reference in Report: Auditor shall NOT refer to auditor's expert in an unmodified report. Permitted only in modified report if relevant to explain modification, with consent."
+    ],
+    "examFocus": "SA 620 vs SA 500 distinction, objectivity evaluation, strict prohibition of reference in unmodified report."
+  },
+  {
+    "code": "SA 700 (Revised)",
+    "category": "Reporting",
+    "series": "700 Series",
+    "title": "Forming an Opinion and Reporting on Financial Statements",
+    "scope": "Forming an opinion on financial statements, form and content of auditor's report issued as a result of an audit.",
+    "keyProvisions": [
+      "Standard Report Structure: (1) Title ('Independent Auditor's Report'), (2) Addressee, (3) Opinion Section, (4) Basis for Opinion, (5) Going Concern / MURGC (if applicable), (6) Key Audit Matters (listed entities), (7) Responsibilities of Management & TCWG, (8) Auditor's Responsibilities, (9) Other Reporting Responsibilities (e.g., 143(3), CARO), (10) Signature, Place, Date, UDIN.",
+      "Opinion First: Under Revised SA 700, Opinion paragraph appears FIRST, immediately followed by Basis for Opinion.",
+      "True and Fair View: Conclude whether FS are prepared, in all material respects, in accordance with applicable FRF."
+    ],
+    "examFocus": "Order of report sections under Revised SA 700, contents of Basis for Opinion, UDIN mandate."
+  },
+  {
+    "code": "SA 701",
+    "category": "Reporting",
+    "series": "700 Series",
+    "title": "Communicating Key Audit Matters in the Independent Auditor's Report",
+    "scope": "Auditor's responsibility to communicate key audit matters (KAM) in the auditor's report for audits of listed entities.",
+    "keyProvisions": [
+      "Definition of KAM: Those matters that, in the auditor's professional judgment, were of most significance in the audit of financial statements of the current period.",
+      "Selection Funnel: Matters communicated with TCWG -> Matters that required significant auditor attention -> Key Audit Matters.",
+      "Core Determination Factors: Areas of higher assessed RMM or significant risks (SA 315); Significant auditor judgments relating to accounting estimates (SA 540); Effect of significant events or transactions.",
+      "Prohibitions: KAM is NOT a substitute for: (1) Financial statement disclosures, (2) Modified opinion under SA 705, (3) Going concern reporting under SA 570, or (4) A separate opinion on individual matters.",
+      "Disclaimer of Opinion: Communicating KAM is PROHIBITED when the auditor disclaims an opinion on the financial statements."
+    ],
+    "examFocus": "3-stage determination funnel, 4 prohibitions/substitute bans, KAM prohibited in Disclaimer of Opinion."
+  },
+  {
+    "code": "SA 705 (Revised)",
+    "category": "Reporting",
+    "series": "700 Series",
+    "title": "Modifications to the Opinion in the Independent Auditor's Report",
+    "scope": "Types of modified opinions: Qualified Opinion, Adverse Opinion, and Disclaimer of Opinion.",
+    "keyProvisions": [
+      "Two Driving Factors: Nature of matter (Material Misstatement vs Inability to Obtain Evidence) and Pervasiveness (Material but Not Pervasive vs Material and Pervasive).",
+      "Decision Matrix: Misstatement + Not Pervasive = QUALIFIED; Misstatement + Pervasive = ADVERSE; Scope Limitation + Not Pervasive = QUALIFIED; Scope Limitation + Pervasive = DISCLAIMER.",
+      "Definition of Pervasive: Not confined to specific elements; represents substantial proportion of FS; or fundamental to users' understanding.",
+      "Basis for Modification: Amend heading to 'Basis for Qualified/Adverse/Disclaimer of Opinion'; state specific reasons and quantified financial effect."
+    ],
+    "examFocus": "2x2 decision matrix, definition of pervasive, drafting Basis for Modification section."
+  },
+  {
+    "code": "SA 706 (Revised)",
+    "category": "Reporting",
+    "series": "700 Series",
+    "title": "Emphasis of Matter Paragraphs and Other Matter Paragraphs in the Independent Auditor's Report",
+    "scope": "Additional communication in auditor's report when deemed necessary: Emphasis of Matter (EoM) and Other Matter (OM).",
+    "keyProvisions": [
+      "Emphasis of Matter (EoM): Refers to a matter appropriately presented or disclosed in FS that, in auditor's judgment, is fundamental to users' understanding (e.g., exceptional litigation, early adoption of new standard, major catastrophe).",
+      "EoM Rules: Clear reference to specific note in FS; explicitly state opinion is NOT modified in respect of the matter; must NOT be a substitute for KAM or modified opinion.",
+      "Other Matter (OM): Refers to a matter other than those presented or disclosed in FS that is relevant to users' understanding of audit, auditor's responsibilities, or report (e.g., prior period audited by predecessor, joint audit division of responsibility)."
+    ],
+    "examFocus": "EoM vs OM distinction, mandatory inclusion rules, EoM cannot substitute for KAM or qualification."
+  },
+  {
+    "code": "SA 710",
+    "category": "Reporting",
+    "series": "700 Series",
+    "title": "Comparative Information - Corresponding Figures and Comparative Financial Statements",
+    "scope": "Auditor's responsibilities relating to comparative information in an audit of financial statements.",
+    "keyProvisions": [
+      "Corresponding Figures: Integral part of current period FS, read only in relation to current period amounts. Auditor's opinion refers only to current period (standard Indian framework).",
+      "Comparative Financial Statements: Prior period amounts included for comparison; auditor's opinion refers to EACH period presented.",
+      "Reporting on Corresponding Figures: Opinion does not mention corresponding figures except if: prior period report was modified and unresolved; prior period unaudited; prior period audited by predecessor auditor (OM paragraph)."
+    ],
+    "examFocus": "Corresponding Figures vs Comparative FS, reporting when prior year auditor was different or unaudited."
+  },
+  {
+    "code": "SA 720 (Revised)",
+    "category": "Reporting",
+    "series": "700 Series",
+    "title": "The Auditor's Responsibilities Relating to Other Information",
+    "scope": "Auditor's responsibilities relating to other information (financial and non-financial) included in an entity's annual report.",
+    "keyProvisions": [
+      "Other Information: Financial or non-financial information (other than FS and auditor's report) included in entity's annual report (e.g., Board's Report, MD&A).",
+      "Auditor's Duty: Read other information to identify material inconsistencies between other information and FS, or between other information and auditor's knowledge.",
+      "Material Inconsistency Identified: If other information contains uncorrected misstatement -> request management; if uncorrected, communicate to TCWG and include in Other Information section of report.",
+      "Separate Section: Dedicated 'Other Information' section mandatory in all audit reports of listed entities."
+    ],
+    "examFocus": "Scope of other information, auditor's reading and consistency duty, mandatory Other Information section."
+  },
+  {
+    "code": "SA 800",
+    "category": "Specialised Standards",
+    "series": "800 Series",
+    "title": "Special Considerations - Audits of Financial Statements Prepared in Accordance with Special Purpose Frameworks",
+    "scope": "Audits of financial statements prepared in accordance with special purpose frameworks (cash basis, tax basis, regulatory basis).",
+    "keyProvisions": [
+      "Special Purpose Framework: Financial reporting framework designed to meet financial information needs of specific users.",
+      "Acceptability: Understand purpose of FS, intended users, and steps taken by management to determine framework is acceptable.",
+      "Auditor's Report: Include Emphasis of Matter paragraph alerting users that FS are prepared in accordance with a special purpose framework and may not be suitable for another purpose."
+    ],
+    "examFocus": "EoM paragraph alerting special purpose restriction, determining acceptability of framework."
+  },
+  {
+    "code": "SRE 2400 (Revised)",
+    "category": "Review Engagements",
+    "series": "SRE Series",
+    "title": "Engagements to Review Historical Financial Statements",
+    "scope": "Reviews of historical financial statements performed by a practitioner who is NOT the statutory auditor of the entity.",
+    "keyProvisions": [
+      "Level of Assurance: Limited assurance (negative assurance conclusion: 'Nothing has come to our attention...').",
+      "Primary Procedures: Inquiries of management and Analytical procedures. No requirement to test controls or perform physical observation/external confirmations unless doubt arises.",
+      "Additional Procedures Protocol: If practitioner becomes aware of matter causing doubt, perform additional procedures to either: conclude not likely misstated, or determine it causes material misstatement.",
+      "Reporting: Express conclusion (unmodified, qualified, adverse, or disclaimer)."
+    ],
+    "examFocus": "Limited assurance wording, inquiry and analytical procedures primacy, SRE 2400 vs audit scope."
+  },
+  {
+    "code": "SRE 2410",
+    "category": "Review Engagements",
+    "series": "SRE Series",
+    "title": "Review of Interim Financial Information Performed by the Independent Auditor of the Entity",
+    "scope": "Review of interim financial information performed by the entity's appointed statutory auditor (e.g., SEBI LODR Regulation 33 quarterly results).",
+    "keyProvisions": [
+      "Applicability: Performed ONLY by the entity's independent statutory auditor who possesses existing understanding of internal control from annual audit.",
+      "Procedures: Inquiries, analytical procedures, reading minutes, obtaining written representations. Substantially less in scope than an audit under SAs.",
+      "Going Concern: Inquire regarding management's plans; auditor does NOT need to corroborate feasibility of plans to the depth of an audit.",
+      "Reporting Under Reg 33: Addressed to Board of Directors, expresses negative conclusion, disclaimer of audit opinion."
+    ],
+    "examFocus": "SRE 2410 vs SRE 2400, SEBI LODR Regulation 33 quarterly review format, auditor options on uncorrected misstatement."
+  },
+  {
+    "code": "SAE 3400",
+    "category": "Assurance Engagements",
+    "series": "SAE Series",
+    "title": "The Examination of Prospective Financial Information",
+    "scope": "Examination and reporting on prospective financial information (PFI) including forecasts and projections.",
+    "keyProvisions": [
+      "Forecast vs Projection: Forecast = PFI based on assumptions of expected events (best-estimate). Projection = PFI based on hypothetical assumptions (what-if scenarios) or mixture.",
+      "Auditor's Examination: Practitioner does NOT express opinion on whether results will be achieved. Opinion is limited to: assumptions provide reasonable basis; properly prepared; consistent with historical FS.",
+      "Mandatory Report Disclosures: Statement that actual results are likely to be different from prospective results because events do not occur as expected.",
+      "Prohibition: Practitioner shall not examine PFI when assumptions are unrealistic or hypothetical assumptions lack justification."
+    ],
+    "examFocus": "Forecast vs Projection distinction, best-estimate vs hypothetical assumptions, mandatory disclaimer on actual results."
+  },
+  {
+    "code": "SAE 3402",
+    "category": "Assurance Engagements",
+    "series": "SAE Series",
+    "title": "Assurance Reports on Controls at a Service Organisation",
+    "scope": "Service auditor's reporting on controls at a service organization providing services to user entities relevant to ICFR.",
+    "keyProvisions": [
+      "Type 1 Report: Covers description and design of controls as of a specific date. Assesses whether controls are suitably designed to achieve control objectives.",
+      "Type 2 Report: Covers description, design AND operating effectiveness of controls throughout a specified period (minimum 6 months). Includes detailed tests of controls and results.",
+      "Written Assertion: Management of service organisation must provide written assertion accompanying description."
+    ],
+    "examFocus": "Type 1 vs Type 2 report criteria, 6-month minimum testing period for Type 2, use by user auditor under SA 402."
+  },
+  {
+    "code": "SRS 4400",
+    "category": "Related Services",
+    "series": "SRS Series",
+    "title": "Engagements to Perform Agreed-Upon Procedures Regarding Financial Information",
+    "scope": "Engagements where practitioner performs procedures agreed between practitioner, entity, and relevant third parties.",
+    "keyProvisions": [
+      "No Assurance: Practitioner does NOT express any assurance (neither reasonable nor limited). Report is a Report of Factual Findings.",
+      "Users Draw Own Conclusions: Users of the report assess for themselves the procedures and findings and draw their own conclusions.",
+      "Restricted Distribution: Report is strictly restricted to parties who have agreed to procedures, as others unaware of reasons might misinterpret findings.",
+      "Independence: Ethical principles apply; Code of Ethics independence not mandatory unless specifically required by engagement terms."
+    ],
+    "examFocus": "No assurance expressed, report of factual findings, restricted distribution mandate."
+  },
+  {
+    "code": "SRS 4410 (Revised)",
+    "category": "Related Services",
+    "series": "SRS Series",
+    "title": "Compilation Engagements",
+    "scope": "Engagements where practitioner applies accounting and financial reporting expertise to assist management in preparing and presenting financial information.",
+    "keyProvisions": [
+      "No Assurance: Practitioner does NOT verify accuracy or completeness of information provided; no audit or review opinion expressed.",
+      "Management Responsibility: Management retains responsibility for financial information and the basis on which it is prepared.",
+      "Practitioner's Duty: Read compiled information in light of understanding of entity; if information provided is incorrect, incomplete, or unsatisfactory, request management to rectify.",
+      "Report Contents: Description of responsibilities, identification of applicable FRF, explicit statement that no audit or review assurance is expressed."
+    ],
+    "examFocus": "No verification or assurance, practitioner duty when information appears misleading, compilation report wording."
+  }
+]

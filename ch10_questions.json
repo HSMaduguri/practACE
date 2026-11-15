@@ -1,0 +1,559 @@
+[
+  {
+    "id": "aud_th_10_tyu1",
+    "subjectId": "Audit",
+    "chapterName": "Review of Financial Information",
+    "title": "SRE 2400 - Review of Financial Statements Prepared under Special Purpose Framework",
+    "difficulty": "Moderate",
+    "marks": 5,
+    "icaiExamRef": "ICAI Study Material - Chapter 10 / Test Your Understanding 1",
+    "question": "Roma Limited has entered into a contract with Dorma Limited. There is a condition in the contract by virtue of which Roma Limited is required to get its financial statements reviewed for a year on a quarterly basis in accordance with the financial reporting provisions of the contract. Can Roma Limited get its financial statements reviewed from a professional accountant in practice?",
+    "keyConcepts": [
+      {
+        "keyword": "SRE 2400 (Revised)",
+        "category": "Standard",
+        "description": "Engagements to Review Historical Financial Statements."
+      },
+      {
+        "keyword": "Special Purpose Framework",
+        "category": "Provision",
+        "description": "Financial statements prepared in accordance with financial reporting provisions of a contract."
+      },
+      {
+        "keyword": "Preconditions for Acceptance",
+        "category": "Rule",
+        "description": "Practitioner determines acceptability of framework and understanding of purpose/users."
+      },
+      {
+        "keyword": "Review Feasibility",
+        "category": "Keyword",
+        "description": "A practitioner in practice can review special purpose financial statements."
+      }
+    ],
+    "shortSuggestedAnswer": "\u2022 Evaluation under SRE 2400 (Revised):\n  - YES. Roma Limited can validly get its financial statements reviewed by a professional accountant in practice.\n\n\u2022 Key Regulatory Conditions & Reporting Requirements:\n  1. Special Purpose Framework Recognition:\n     - Financial statements prepared per financial reporting provisions of a contract constitute \"Special Purpose Financial Statements\".\n     - SRE 2400 explicitly permits review of financial statements prepared using either general purpose or special purpose frameworks.\n  2. Acceptance Preconditions:\n     - Prior to acceptance, practitioner must determine whether the contract's financial reporting framework is acceptable.\n     - Practitioner must obtain an understanding of the purpose for which statements are prepared and intended users.\n  3. Reporting Requirement:\n     - The practitioner's review report must include an explanatory paragraph (or Emphasis of Matter) describing the purpose and drawing attention of readers that statements are prepared under a special purpose framework and may not be suitable for other purposes.",
+    "defaultRemarks": {
+      "efficiencyReasoning": "Candidate must affirm feasibility under SRE 2400, categorize the contract framework as special purpose, and state the explanatory disclosure rule.",
+      "criticalMisses": [
+        "Stating that SRE 2400 only applies to general purpose financial statements.",
+        "Omission of special purpose framework disclosure requirement."
+      ],
+      "suggestions": [
+        "Mention the required Emphasis of Matter / explanatory paragraph."
+      ]
+    }
+  },
+  {
+    "id": "aud_th_10_tyu2",
+    "subjectId": "Audit",
+    "chapterName": "Review of Financial Information",
+    "title": "SRE 2400 - Practitioner Action upon Identifying Possibility of Material Misstatement",
+    "difficulty": "Advanced",
+    "marks": 6,
+    "icaiExamRef": "ICAI Study Material - Chapter 10 / Test Your Understanding 2",
+    "question": "You are conducting a review of the financial statements of a company. It is gathered upon inquiry that there is a possibility of material misstatements in the financial statements. Discuss how you would proceed further in the matter under SRE 2400.",
+    "keyConcepts": [
+      {
+        "keyword": "SRE 2400 (Revised)",
+        "category": "Standard",
+        "description": "Engagements to Review Historical Financial Statements."
+      },
+      {
+        "keyword": "Additional Procedures",
+        "category": "Provision",
+        "description": "Practitioner must design and perform additional procedures when aware of potential material misstatement."
+      },
+      {
+        "keyword": "Objective of Additional Procedures",
+        "category": "Keyword",
+        "description": "To conclude matter is NOT likely to cause material misstatement OR determine that it DOES cause material misstatement."
+      },
+      {
+        "keyword": "Nature of Additional Procedures",
+        "category": "Keyword",
+        "description": "Inquiries in greater detail, analytical tests, substantive test of details, or external confirmations."
+      },
+      {
+        "keyword": "Scope Limitation",
+        "category": "Rule",
+        "description": "If unable to conclude after additional procedures, a scope limitation exists requiring modified conclusion."
+      }
+    ],
+    "shortSuggestedAnswer": "\u2022 Mandatory Action Protocol under SRE 2400 (Revised):\n  1. Trigger for Additional Procedures:\n     - When the practitioner becomes aware of a matter causing belief that financial statements may be materially misstated, practitioner SHALL design and perform additional procedures.\n  2. Dual Objective of Additional Procedures:\n     - (a) Conclude that the matter(s) is NOT likely to cause the financial statements as a whole to be materially misstated; OR\n     - (b) Determine that the matter(s) DOES cause the financial statements as a whole to be materially misstated.\n  3. Nature of Additional Procedures:\n     - Additional inquiry or analytical procedures focused in greater detail on affected accounts.\n     - Other procedures, such as substantive test of details or external confirmations (e.g. verifying subsequent collections for past-due debtors).\n  4. Subsequent Evaluation:\n     - If outcome (a): Issue unmodified conclusion.\n     - If outcome (b): Request management correction; if refused, express Qualified or Adverse conclusion.\n     - If unable to reach either (a) or (b): A scope limitation exists; practitioner must express a Qualified conclusion or Disclaim a conclusion.",
+    "defaultRemarks": {
+      "efficiencyReasoning": "Candidate must delineate the dual objective of additional procedures, list sample procedures, and trace the decision tree through resolution or scope limitation.",
+      "criticalMisses": [
+        "Failing to mention the dual objective under SRE 2400.",
+        "Omitting the consequence of unresolved scope limitations."
+      ],
+      "suggestions": [
+        "Illustrate with an example like overdue debtors requiring substantive test of details."
+      ]
+    }
+  },
+  {
+    "id": "aud_th_10_tyu3",
+    "subjectId": "Audit",
+    "chapterName": "Review of Financial Information",
+    "title": "SRE 2410 - Reporting on Uninsured Disaster Losses & Going Concern Uncertainty",
+    "difficulty": "Advanced",
+    "marks": 6,
+    "icaiExamRef": "ICAI Study Material - Chapter 10 / Test Your Understanding 3",
+    "question": "During review of the quarterly results of a company of which you are auditor, it is gathered on inquiries made that there has been a major fire in fabric processing plant of the company during the quarter. It has resulted in massive disruption in the operations of the company. Worse still, machinery and inventories of plant were uninsured due to carelessness of concerned staff leading to substantial losses. The matter has been disclosed in interim financial information appropriately. Discuss how you would proceed to deal with the same in the review report under SRE 2410.",
+    "keyConcepts": [
+      {
+        "keyword": "SRE 2410",
+        "category": "Standard",
+        "description": "Review of Interim Financial Information Performed by the Independent Auditor of the Entity."
+      },
+      {
+        "keyword": "Going Concern Uncertainty",
+        "category": "Provision",
+        "description": "Uninsured disaster causing massive disruption may cast significant doubt on going concern."
+      },
+      {
+        "keyword": "Adequate Disclosure",
+        "category": "Provision",
+        "description": "Entity has appropriately disclosed the fire, uninsured losses, and operational disruption in notes."
+      },
+      {
+        "keyword": "Emphasis of Matter Paragraph",
+        "category": "Rule",
+        "description": "Auditor modifies review report by adding an Emphasis of Matter paragraph highlighting the uncertainty."
+      },
+      {
+        "keyword": "Clean Conclusion Preserved",
+        "category": "Keyword",
+        "description": "Conclusion is not qualified when adequate disclosure is made in interim financial information."
+      }
+    ],
+    "shortSuggestedAnswer": "\u2022 Factual & Technical Analysis:\n  - Major fire causing operational disruption combined with substantial uninsured losses creates significant doubt regarding going concern.\n  - Management has appropriately disclosed the disaster, losses, and implications in interim financial information notes.\n\n\u2022 Reporting Treatment under SRE 2410:\n  1. Evaluation of Disclosure:\n     - Under SRE 2410, when a material uncertainty exists regarding going concern and ADEQUATE DISCLOSURE is made in the interim financial information, the auditor modifies the review report by adding an EMPHASIS OF MATTER (EoM) paragraph.\n  2. Structure of Review Report:\n     - The conclusion expressed by the auditor remains UNMODIFIED (not qualified).\n     - An Emphasis of Matter paragraph is inserted immediately following the conclusion paragraph.\n     - The EoM paragraph draws attention to the specific note disclosing the fire loss, lack of insurance, and operational disruption, highlighting the material uncertainty.",
+    "defaultRemarks": {
+      "efficiencyReasoning": "Must distinguish between adequate disclosure (warranting Emphasis of Matter) vs inadequate disclosure (warranting Qualified/Adverse conclusion).",
+      "criticalMisses": [
+        "Calling for a qualified conclusion despite adequate disclosure.",
+        "Failing to cite SRE 2410 going concern rules."
+      ],
+      "suggestions": [
+        "Explicitly affirm that the conclusion is unmodified but report is modified via EoM."
+      ]
+    }
+  },
+  {
+    "id": "aud_th_10_tyu4",
+    "subjectId": "Audit",
+    "chapterName": "Review of Financial Information",
+    "title": "SRE 2410 - Options Available upon Management and Audit Committee Inaction on Material Misstatement",
+    "difficulty": "Advanced",
+    "marks": 6,
+    "icaiExamRef": "ICAI Study Material - Chapter 10 / Test Your Understanding 4",
+    "question": "CA Seerat is conducting review of the quarterly financial information of a company of which she is also auditor. She believes that it is necessary to make a material adjustment to the quarterly financial information for it to be prepared, in all material respects, in accordance with the applicable financial reporting framework. She has communicated the matter to the CFO and the audit committee. However, no response was received even after waiting for a reasonable time. What are the options available to her under SRE 2410?",
+    "keyConcepts": [
+      {
+        "keyword": "SRE 2410",
+        "category": "Standard",
+        "description": "Review of Interim Financial Information Performed by the Independent Auditor."
+      },
+      {
+        "keyword": "Unadjusted Material Misstatement",
+        "category": "Provision",
+        "description": "Management and TCWG failure to make necessary material adjustment."
+      },
+      {
+        "keyword": "Modify Review Report",
+        "category": "Rule",
+        "description": "Express a Qualified or Adverse conclusion describing the departure and financial effects."
+      },
+      {
+        "keyword": "Withdrawal from Engagement",
+        "category": "Rule",
+        "description": "Consider withdrawing from the interim review engagement."
+      },
+      {
+        "keyword": "Resignation from Statutory Audit",
+        "category": "Rule",
+        "description": "Consider resigning from the appointment to audit the annual financial statements."
+      }
+    ],
+    "shortSuggestedAnswer": "\u2022 Statutory Protocol under SRE 2410:\n  - When the auditor believes a material adjustment is necessary and Those Charged with Governance (Audit Committee) do not respond appropriately within a reasonable time, CA Seerat must evaluate her legal and reporting recourse.\n\n\u2022 Three Specific Options Available to CA Seerat:\n  1. Option 1: Modify the Review Report:\n     - Issue a Modified Review Report with a Qualified Conclusion (\"Except for...\") or an Adverse Conclusion (if material and pervasive).\n     - The report must describe the nature of the departure and, if practicable, quantify the financial effects on the interim financial information.\n  2. Option 2: Withdraw from the Review Engagement:\n     - Consider the possibility of withdrawing from the interim review engagement prior to report issuance.\n  3. Option 3: Resign from the Annual Statutory Audit Appointment:\n     - SRE 2410 explicitly provides that the auditor should consider the possibility of RESIGNING FROM THE APPOINTMENT TO AUDIT THE ANNUAL FINANCIAL STATEMENTS of the entity.",
+    "defaultRemarks": {
+      "efficiencyReasoning": "Requires identification of all three distinct statutory options under SRE 2410 Para 3.8: Modify report, Withdraw from review, and Resign from annual audit.",
+      "criticalMisses": [
+        "Omission of option to resign from the annual statutory audit.",
+        "Failure to mention Qualified vs Adverse conclusion."
+      ],
+      "suggestions": [
+        "State that CA Seerat must document all communications with CFO and Audit Committee."
+      ]
+    }
+  },
+  {
+    "id": "aud_th_10_case",
+    "subjectId": "Audit",
+    "chapterName": "Review of Financial Information",
+    "title": "Integrated Case Scenario - Fast Operations Limited: Review Report under SEBI LODR Reg 33 & SRE 2410",
+    "difficulty": "Mastery",
+    "marks": 6,
+    "icaiExamRef": "ICAI Study Material - Chapter 10 / Integrated Case Scenario",
+    "question": "Fast Operations Limited, a listed company, is finalizing its interim review report for the quarter and six months ended September 30, 2024, pursuant to Regulation 33 of SEBI (LODR) Regulations, 2015. Analyze the required draft report text and answer:\\n[1] Who is the statutory addressee of the review report?\\n[2] How should the auditor's responsibility sentence begin under paragraph 2?\\n[3] Which specific engagement standard must be stated in paragraph 3?\\n[4] What is the precise statutory phrasing comparing review scope with an audit?\\n[5] What is the standard negative assurance conclusion sentence under paragraph 4?",
+    "keyConcepts": [
+      {
+        "keyword": "SEBI LODR Regulation 33",
+        "category": "Rule",
+        "description": "Mandatory quarterly review requirement for listed entities."
+      },
+      {
+        "keyword": "Addressee Board of Directors",
+        "category": "Rule",
+        "description": "Review report of listed company under Reg 33 is addressed to Board of Directors."
+      },
+      {
+        "keyword": "Responsibility to Express Conclusion",
+        "category": "Provision",
+        "description": "Auditor responsibility is to express a conclusion, not an opinion."
+      },
+      {
+        "keyword": "SRE 2410 Mandate",
+        "category": "Standard",
+        "description": "Review of Interim Financial Information Performed by the Independent Auditor."
+      },
+      {
+        "keyword": "Substantially Less in Scope",
+        "category": "Keyword",
+        "description": "Review is substantially less in scope than an audit conducted per SAs."
+      },
+      {
+        "keyword": "Negative Assurance Phrasing",
+        "category": "Provision",
+        "description": "Nothing has come to our attention that causes us to believe Statement has not disclosed required info or contains material misstatement."
+      }
+    ],
+    "shortSuggestedAnswer": "\u2022 Analysis of Draft Review Report under SRE 2410 & SEBI LODR Reg 33:\n\n  1. Addressee of Report:\n     - Addressed to the \"Board of Directors\" of Fast Operations Limited.\n\n  2. Responsibility Statement (Para 2):\n     - \"Our responsibility is to express a conclusion on the Statement based on our review.\" (Not an opinion, and not reasonable assurance).\n\n  3. Engagement Standard Reference (Para 3):\n     - Standard on Review Engagements (SRE) 2410, \"Review of Interim Financial Information Performed by the Independent Auditor of the Entity\".\n\n  4. Scope Comparison Phrasing (Para 3):\n     - \"A review is substantially less in scope than an audit conducted in accordance with Standards on Auditing specified under section 143(10) of the Companies Act, 2013 and consequently does not enable us to obtain assurance that we would become aware of all significant matters that might be identified in an audit. Accordingly, we do not express an audit opinion.\"\n\n  5. Concluding Negative Assurance Phrasing (Para 4):\n     - \"Based on our review conducted as stated above, nothing has come to our attention that causes us to believe that the accompanying Statement, prepared in accordance with the recognition and measurement principles laid down in the aforesaid Indian Accounting Standard (Ind AS 34) and other accounting principles generally accepted in India, has not disclosed the information required to be disclosed in terms of Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended, including the manner in which it is to be disclosed, or that it contains any material misstatement.\"",
+    "defaultRemarks": {
+      "efficiencyReasoning": "Requires exact knowledge of the ICAI/SEBI prescribed format of independent auditor's review report for listed company quarterly results.",
+      "criticalMisses": [
+        "Confusing 'conclusion' with 'opinion'.",
+        "Selecting SRE 2400 instead of SRE 2410.",
+        "Incorrect negative assurance wording under Reg 33."
+      ],
+      "suggestions": [
+        "Memorize the precise SEBI Regulation 33 negative assurance boilerplate."
+      ]
+    }
+  },
+  {
+    "id": "aud_th_10_q1",
+    "subjectId": "Audit",
+    "chapterName": "Review of Financial Information",
+    "title": "SRE 2400 / SRE 2410 - Why \"Inquiry\" is a Critical Audit Procedure in Review Engagements",
+    "difficulty": "Moderate",
+    "marks": 5,
+    "icaiExamRef": "ICAI Study Material - Chapter 10 / Theoretical Question 1",
+    "question": "Discuss why \u201cinquiry\u201d is important as an audit procedure in an engagement to review financial statements.",
+    "keyConcepts": [
+      {
+        "keyword": "Inquiry as Principal Source",
+        "category": "Keyword",
+        "description": "Inquiry is often the principal source of evidence regarding management intent."
+      },
+      {
+        "keyword": "Evaluating Management Responses",
+        "category": "Provision",
+        "description": "Understanding past history of intentions and ability to pursue stated courses of action."
+      },
+      {
+        "keyword": "Professional Skepticism",
+        "category": "Standard",
+        "description": "Applying professional skepticism to determine if matters cause belief of material misstatement."
+      },
+      {
+        "keyword": "Updating Understanding",
+        "category": "Provision",
+        "description": "Inquiries assist in updating knowledge of entity to identify where misstatements are likely."
+      }
+    ],
+    "shortSuggestedAnswer": "\u2022 Importance of \"Inquiry\" in Review Engagements:\n  1. Principal Source for Management Intent:\n     - Evidence obtained through inquiry is often the principal source of evidence about management intent, accounting estimates, and future commitments.\n  2. Corroboration of Stated Intentions:\n     - When documentary evidence of intent is limited, understanding management\u2019s past track record, stated rationale, and financial ability provides essential corroborative context.\n  3. Foundation for Professional Skepticism:\n     - Inquiries enable practitioner to apply professional skepticism in critically evaluating responses, inconsistencies, and potential management bias.\n  4. Updating Understanding of Entity & Environment:\n     - Conducting inquiries assists the auditor in obtaining and updating understanding of the entity's internal controls and operating environment.\n  5. Identifying High-Risk Areas:\n     - Inquiries directly assist in identifying accounts, transactions, or contingencies where material misstatements are most likely to arise.",
+    "defaultRemarks": {
+      "efficiencyReasoning": "Candidate must explain inquiry's role as principal evidence of intent, application of skepticism, and identification of misstatement risks.",
+      "criticalMisses": [
+        "Treating inquiry as mere casual conversation.",
+        "Omission of professional skepticism in evaluating management responses."
+      ],
+      "suggestions": [
+        "List specific areas of inquiry: estimates, related parties, fraud, going concern."
+      ]
+    }
+  },
+  {
+    "id": "aud_th_10_q2",
+    "subjectId": "Audit",
+    "chapterName": "Review of Financial Information",
+    "title": "SRE 2410 - Five Procedures to Update Understanding of Entity for Quarterly Review",
+    "difficulty": "Moderate",
+    "marks": 5,
+    "icaiExamRef": "ICAI Study Material - Chapter 10 / Theoretical Question 2",
+    "question": "CA Aditya Jain is auditor of a listed company. He is also required to carry out a quarterly review of financial statements of company in terms of regulatory requirements. He is already well-versed with the business of the company and has a deep understanding of the company. Discuss any of the five procedures by which he can update his understanding of the company for carrying out quarterly review under SRE 2410.",
+    "keyConcepts": [
+      {
+        "keyword": "SRE 2410",
+        "category": "Standard",
+        "description": "Review of Interim Financial Information Performed by the Independent Auditor."
+      },
+      {
+        "keyword": "Preceding Audit Documentation",
+        "category": "Keyword",
+        "description": "Reading prior year audit workpapers and recent interim reviews."
+      },
+      {
+        "keyword": "Significant Risks Re-assessment",
+        "category": "Provision",
+        "description": "Considering significant risks including risk of management override of controls."
+      },
+      {
+        "keyword": "Internal Audit Reports",
+        "category": "Provision",
+        "description": "Considering results of internal audits and actions taken by management."
+      },
+      {
+        "keyword": "Management Inquiries",
+        "category": "Keyword",
+        "description": "Inquiring about fraud risks, business model changes, and internal control modifications."
+      },
+      {
+        "keyword": "Materiality Considerations",
+        "category": "Rule",
+        "description": "Considering materiality with reference to applicable FRF for interim info."
+      }
+    ],
+    "shortSuggestedAnswer": "\u2022 Five Procedures to Update Understanding under SRE 2410 (Para 3.3):\n  1. Reading Prior Workpapers & Documentation:\n     - Read the documentation of the preceding year\u2019s audit and reviews of prior interim periods to identify recurring accounting issues or adjustments.\n  2. Reviewing Prior Significant Risks:\n     - Consider significant risks identified during the annual audit, specifically the risk of management override of controls.\n  3. Reading Recent Financial Information:\n     - Read the most recent annual financial statements and comparable prior interim period statements.\n  4. Considering Internal Audit Findings:\n     - Review the reports and findings of internal audits conducted during the interim period and examine subsequent actions taken by management.\n  5. Inquiries Regarding Fraud & Control Changes:\n     - Inquire of management regarding:\n       \u2022 Results of management\u2019s fraud risk assessment;\n       \u2022 Changes in business activities or operations;\n       \u2022 Significant changes in internal control and their potential impact on interim reporting.",
+    "defaultRemarks": {
+      "efficiencyReasoning": "Evaluated on listing 5 exact procedures from SRE 2410 Para 3.3 for updating understanding of the entity.",
+      "criticalMisses": [
+        "Generic answers without specific reference to interim audit review procedures.",
+        "Omission of management override of controls consideration."
+      ],
+      "suggestions": [
+        "Present in concise numbered points."
+      ]
+    }
+  },
+  {
+    "id": "aud_th_10_q3",
+    "subjectId": "Audit",
+    "chapterName": "Review of Financial Information",
+    "title": "SRE 2400 / SRE 2410 - Significance of \"Date of Report\" in a Review Report",
+    "difficulty": "Moderate",
+    "marks": 5,
+    "icaiExamRef": "ICAI Study Material - Chapter 10 / Theoretical Question 3",
+    "question": "What is the significance of \u201cdate of report\u201d in a review report under SRE 2400 / SRE 2410?",
+    "keyConcepts": [
+      {
+        "keyword": "Date of Review Report",
+        "category": "Standard",
+        "description": "Report date must be no earlier than date on which sufficient appropriate evidence was obtained."
+      },
+      {
+        "keyword": "Completion of Statements",
+        "category": "Provision",
+        "description": "Satisfied that all statements comprising financial statements including notes have been prepared."
+      },
+      {
+        "keyword": "Management Responsibility Assertion",
+        "category": "Provision",
+        "description": "Those with recognized authority have asserted responsibility for financial statements."
+      },
+      {
+        "keyword": "Subsequent Events Boundary",
+        "category": "Rule",
+        "description": "Auditor has duty to consider events up to the report date; no obligation for active procedures after report date."
+      }
+    ],
+    "shortSuggestedAnswer": "\u2022 Significance of Date of Report in a Review Engagement:\n  1. Evidence Cut-Off Benchmark:\n     - The practitioner SHALL date the report no earlier than the date on which sufficient appropriate evidence was obtained as the basis for the conclusion.\n  2. Verification of Preparation Completeness:\n     - Date establishes that all statements comprising financial statements (including related notes) have been completely prepared.\n  3. Formal Assertion of Responsibility:\n     - Confirms that those with recognized authority (e.g. Board of Directors/Management) have formally asserted that they have taken responsibility for those financial statements.\n  4. Boundary of Auditor Responsibility:\n     - Establishes the exact cut-off date up to which the practitioner is responsible for considering events and transactions affecting financial statements. Auditor has no active obligation to perform review procedures after this date.",
+    "defaultRemarks": {
+      "efficiencyReasoning": "Candidate must explain the dual significance: evidence benchmark and management responsibility assertion date.",
+      "criticalMisses": [
+        "Failing to mention management's assertion of responsibility.",
+        "Omission of evidence cut-off principle."
+      ],
+      "suggestions": [
+        "Link report date to subsequent events obligations."
+      ]
+    }
+  },
+  {
+    "id": "aud_th_10_q4",
+    "subjectId": "Audit",
+    "chapterName": "Review of Financial Information",
+    "title": "SRE 2410 - Auditor\u2019s Responsibility for Subsequent Events Occurring up to Report Date",
+    "difficulty": "Advanced",
+    "marks": 6,
+    "icaiExamRef": "ICAI Study Material - Chapter 10 / Theoretical Question 4",
+    "question": "CA Pankaj Chaturvedi has issued a review report dated 28-07-2024 for the financial results of a company for quarter ending 30-06-2024. Describe his responsibility, if any, for events occurring from 01-07-2024 till date of review report in accordance with SRE 2410.",
+    "keyConcepts": [
+      {
+        "keyword": "SRE 2410",
+        "category": "Standard",
+        "description": "Review of Interim Financial Information Performed by the Independent Auditor."
+      },
+      {
+        "keyword": "Subsequent Events Inquiry",
+        "category": "Provision",
+        "description": "Auditor must inquire whether management has identified all events up to report date requiring adjustment/disclosure."
+      },
+      {
+        "keyword": "No Active Search Duty",
+        "category": "Rule",
+        "description": "Auditor is not required to perform extensive procedures to identify events occurring after review period other than inquiry."
+      },
+      {
+        "keyword": "Written Representation",
+        "category": "Provision",
+        "description": "Management representation confirming all subsequent events up to report date have been disclosed."
+      }
+    ],
+    "shortSuggestedAnswer": "\u2022 Auditor Responsibility under SRE 2410:\n  1. Mandatory Inquiry Obligation:\n     - The auditor should inquire of management whether management has identified all events occurring up to the date of review report (28-07-2024) that may require adjustment to or disclosure in the interim financial information.\n  2. Scope of Procedures:\n     - SRE 2410 explicitly provides that it is NOT necessary for the auditor to perform elaborate audit-nature procedures to search for subsequent events occurring after balance sheet date.\n     - Responsibility is primarily discharged through:\n       \u2022 Inquiries of management responsible for financial and accounting matters;\n       \u2022 Reading available minutes of meetings of shareholders and TCWG held between 01-07-2024 and 28-07-2024;\n       \u2022 Reading subsequent interim management accounts.\n  3. Written Representation Requirement:\n     - Obtain written representation from management that all events occurring subsequent to 30-06-2024 and requiring adjustment or disclosure have been duly adjusted or disclosed.",
+    "defaultRemarks": {
+      "efficiencyReasoning": "Evaluated on identifying inquiry as the primary procedure and clarifying that exhaustive audit search procedures are not required in an interim review.",
+      "criticalMisses": [
+        "Applying full SA 560 audit procedures instead of SRE 2410 interim review inquiry rules.",
+        "Omission of management written representation."
+      ],
+      "suggestions": [
+        "Differentiate between events occurring up to report date vs events discovered after report date."
+      ]
+    }
+  },
+  {
+    "id": "aud_th_10_q5",
+    "subjectId": "Audit",
+    "chapterName": "Review of Financial Information",
+    "title": "SRE 2400 / SRE 2410 - Steps to be Taken upon Doubt Regarding Going Concern",
+    "difficulty": "Advanced",
+    "marks": 6,
+    "icaiExamRef": "ICAI Study Material - Chapter 10 / Theoretical Question 5",
+    "question": "A review of financial statements includes consideration of the entity\u2019s ability to continue as a going concern. If, during the performance of the review, the practitioner becomes aware of events or conditions that may cast significant doubt about the entity\u2019s ability to continue as a going concern, enumerate the steps to be taken by the practitioner under SRE 2400 / SRE 2410.",
+    "keyConcepts": [
+      {
+        "keyword": "Going Concern Inquiries",
+        "category": "Provision",
+        "description": "Inquire of management regarding plans for future actions and feasibility."
+      },
+      {
+        "keyword": "Evaluation of Management Plans",
+        "category": "Keyword",
+        "description": "Evaluate whether outcome of plans will improve situation (liquidation, debt restructuring, capital)."
+      },
+      {
+        "keyword": "Corroboration Not Required",
+        "category": "Rule",
+        "description": "Under SRE 2410, not ordinarily necessary to corroborate feasibility of management plans."
+      },
+      {
+        "keyword": "Adequacy of Disclosure",
+        "category": "Provision",
+        "description": "Assess adequacy of going concern disclosures in financial statements."
+      },
+      {
+        "keyword": "Reporting Impact",
+        "category": "Standard",
+        "description": "Emphasis of Matter if adequately disclosed; Qualified/Adverse if inadequately disclosed."
+      }
+    ],
+    "shortSuggestedAnswer": "\u2022 Mandatory Steps when Going Concern Doubt Arises:\n  1. Inquiry into Management\u2019s Future Plans:\n     - Inquire of management as to its plans for future action (e.g. plans to liquidate assets, borrow money, restructure debt, reduce/delay expenditure, or raise additional capital).\n     - Inquire about feasibility of those plans and whether management believes the outcome will improve the entity\u2019s situation.\n  2. Evaluation of Inquiry Responses:\n     - Evaluate whether management\u2019s responses provide a sufficient basis to continue preparing statements on going concern basis.\n     - Note: In an interim review under SRE 2410, it is not ordinarily necessary for auditor to independently corroborate feasibility of management's plans.\n  3. Assessment of Financial Statement Disclosures:\n     - Determine whether adequate disclosure of the material uncertainty has been made in notes to the financial statements.\n  4. Reporting Determination:\n     - If Adequately Disclosed: Express an unmodified conclusion and add an EMPHASIS OF MATTER paragraph highlighting the material uncertainty.\n     - If Inadequately Disclosed: Express a QUALIFIED or ADVERSE conclusion, stating specific reference to the material uncertainty.",
+    "defaultRemarks": {
+      "efficiencyReasoning": "Requires clear enumeration: Inquiry on plans -> Evaluate feasibility belief -> Assess disclosure -> Formulate reporting (EoM vs Qualified/Adverse).",
+      "criticalMisses": [
+        "Failing to address the reporting outcomes (EoM vs Modified).",
+        "Omission of inquiry regarding management's future recovery plans."
+      ],
+      "suggestions": [
+        "Mention that SRE 2410 does not require corroboration of management plan feasibility."
+      ]
+    }
+  },
+  {
+    "id": "aud_th_10_q6",
+    "subjectId": "Audit",
+    "chapterName": "Review of Financial Information",
+    "title": "SRE 2410 - Reporting on Working Capital Deficits, Loan Defaults & Material Uncertainty (GAK Limited)",
+    "difficulty": "Advanced",
+    "marks": 6,
+    "icaiExamRef": "ICAI Study Material - Chapter 10 / Theoretical Question 6",
+    "question": "GAK Limited has compiled interim financial information and submitted it to the auditors. CA Reena noted that GAK Limited has been facing continuous working capital shortages, banks are unwilling to extend limits due to continuous 3-year losses, loan installments and interest have been defaulted for the last one year, and operations are severely curtailed.\\nUnder such circumstances, CA Reena noted that GAK Limited has NOT disclosed any information in the interim financial information relating to material uncertainties.\\n(a) Advise CA Reena on what kind of review report is required to be issued.\\n(b) If GAK Limited has disclosed information relating to material uncertainty, can CA Reena give a clean report? Discuss under SRE 2410.",
+    "keyConcepts": [
+      {
+        "keyword": "SRE 2410",
+        "category": "Standard",
+        "description": "Review of Interim Financial Information Performed by the Independent Auditor."
+      },
+      {
+        "keyword": "Material Uncertainty Regarding Going Concern",
+        "category": "Provision",
+        "description": "Loan defaults, working capital shortage, and curtailed operations constitute material uncertainty."
+      },
+      {
+        "keyword": "Inadequate Disclosure - Modified Conclusion",
+        "category": "Rule",
+        "description": "If material uncertainty is not disclosed, express a Qualified or Adverse conclusion."
+      },
+      {
+        "keyword": "Adequate Disclosure - Emphasis of Matter",
+        "category": "Rule",
+        "description": "If material uncertainty is disclosed, express an unmodified conclusion with Emphasis of Matter paragraph."
+      }
+    ],
+    "shortSuggestedAnswer": "\u2022 Part (a) - When GAK Limited has NOT Disclosed Material Uncertainties:\n  1. Material Uncertainty Exists: Continuous losses for 3 years, loan defaults, bank refusal for credit, and curtailed operations cast significant doubt on going concern.\n  2. Failure to Disclose:\n     - Under SRE 2410, if a material uncertainty that casts significant doubt about the entity's ability to continue as a going concern is NOT adequately disclosed, the auditor SHALL express a QUALIFIED or ADVERSE conclusion, as appropriate.\n     - Review report must specifically describe existence of material uncertainty and quantify financial effects if practicable.\n\n\u2022 Part (b) - When GAK Limited HAS Disclosed Material Uncertainties:\n  1. Unmodified Conclusion with Modification of Report:\n     - If adequate disclosure is made in interim financial information, CA Reena CANNOT give a standard clean report without modification.\n     - CA Reena must issue an UNMODIFIED conclusion accompanied by an EMPHASIS OF MATTER (EoM) paragraph.\n  2. Contents of Emphasis of Matter Paragraph:\n     - The EoM paragraph will explicitly draw attention to the relevant note disclosing loan defaults, losses, and material uncertainty relating to going concern.",
+    "defaultRemarks": {
+      "efficiencyReasoning": "Evaluated on providing exact dual reporting answers: (a) Qualified/Adverse for non-disclosure, (b) Unmodified with Emphasis of Matter for adequate disclosure.",
+      "criticalMisses": [
+        "Confusing clean report with unmodified conclusion (ignoring mandatory EoM).",
+        "Failing to specify Qualified or Adverse conclusion when disclosure is missing."
+      ],
+      "suggestions": [
+        "Note that a report containing an Emphasis of Matter is not considered a 'clean' unmodified report in vernacular terms, though conclusion is unmodified."
+      ]
+    }
+  },
+  {
+    "id": "aud_th_10_q7",
+    "subjectId": "Audit",
+    "chapterName": "Review of Financial Information",
+    "title": "SRE 2400 - Primary Procedures & Mandatory Statements Describing Review Limitations in Report",
+    "difficulty": "Advanced",
+    "marks": 6,
+    "icaiExamRef": "ICAI Study Material - Chapter 10 / Theoretical Question 7",
+    "question": "In a review engagement performed under SRE 2400, practitioner relies mainly on certain procedures. Naming such procedures, discuss the importance of these procedures in a review engagement.\\nPractitioner\u2019s report containing outcome of review engagement in form of \u201cconclusion\u201d also contains a description of a review of financial statements and its limitations. Which statements in this respect are to be included in the practitioner\u2019s report in accordance with SRE 2400?",
+    "keyConcepts": [
+      {
+        "keyword": "SRE 2400 (Revised)",
+        "category": "Standard",
+        "description": "Engagements to Review Historical Financial Statements."
+      },
+      {
+        "keyword": "Inquiry and Analytical Procedures",
+        "category": "Keyword",
+        "description": "Primary procedures relied upon to obtain limited assurance."
+      },
+      {
+        "keyword": "Mandatory Limitation Statements",
+        "category": "Rule",
+        "description": "3 specific statements required under Para 2.4(g) describing the nature and limitations of review."
+      },
+      {
+        "keyword": "Substantially Less in Scope than Audit",
+        "category": "Provision",
+        "description": "Procedures substantially less than audit conducted under SAs; no audit opinion expressed."
+      }
+    ],
+    "shortSuggestedAnswer": "\u2022 Primary Procedures Relied Upon under SRE 2400:\n  1. Inquiry Procedures:\n     - Seeking explanations from management and personnel regarding accounting policies, estimates, fraud, related parties, and going concern.\n     - Importance: Serves as the principal source of evidence regarding management intent and changes in business operations.\n  2. Analytical Procedures:\n     - Analyzing financial trends, ratios, and relationships to detect abnormal fluctuations and inconsistencies.\n     - Importance: Pinpoints areas where material misstatements are likely and provides corroborative evidence for inquiries.\n\n\u2022 Three Mandatory Statements Describing Review & Its Limitations in Review Report (Para 2.4(g)):\n  1. Limited Assurance Statement:\n     - A review engagement under this SRE is a limited assurance engagement;\n  2. Nature of Procedures Statement:\n     - The practitioner performs procedures, primarily consisting of making inquiries of management and others within the entity, as appropriate, and applying analytical procedures, and evaluates the evidence obtained; and\n  3. Contrast with Audit & Disclaimer of Audit Opinion:\n     - The procedures performed in a review are substantially less than those performed in an audit conducted in accordance with Standards on Auditing (SAs), and, accordingly, the practitioner does NOT express an audit opinion on the financial statements.",
+    "defaultRemarks": {
+      "efficiencyReasoning": "Requires discussion of Inquiry and Analytical procedures plus exact citation of the three mandatory limitation statements from SRE 2400 report format.",
+      "criticalMisses": [
+        "Omission of the three mandatory report limitation statements.",
+        "Superficial explanation of analytical procedures."
+      ],
+      "suggestions": [
+        "Quote the three limitation sub-clauses verbatim or close to ICAI standard wording."
+      ]
+    }
+  }
+]

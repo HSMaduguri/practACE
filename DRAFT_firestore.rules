@@ -1,0 +1,91 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 1. Global safety net - default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // --- Hardened Global Primitive Helpers ---
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // --- Domain Helpers ---
+    function isValidPracticeAttempt(data) {
+      return data.questionId is string 
+        && data.questionId.size() <= 128
+        && data.subjectId is string
+        && (data.subjectId == 'AFM' || data.subjectId == 'FR' || data.subjectId == 'Audit' || data.subjectId == 'DT' || data.subjectId == 'IDT' || data.subjectId == 'IBS')
+        && data.chapterName is string
+        && data.chapterName.size() <= 200
+        && data.isCorrect is bool
+        && data.timestamp is string
+        && data.timestamp.size() <= 64;
+    }
+
+    function isValidBookmarkedSection(data) {
+      return data.subjectId is string
+        && (data.subjectId == 'AFM' || data.subjectId == 'FR' || data.subjectId == 'Audit' || data.subjectId == 'DT' || data.subjectId == 'IDT' || data.subjectId == 'IBS')
+        && data.number is string
+        && data.number.size() <= 128
+        && data.heading is string
+        && data.heading.size() <= 256
+        && data.purpose is string
+        && data.purpose.size() <= 2000;
+    }
+
+    // --- Path Routes ---
+    match /users/{userId} {
+      // Allow users to read their own user root document if they have one
+      allow get: if isOwner(userId);
+
+      match /practiceAttempts/{attemptId} {
+        allow get, list: if isOwner(userId);
+        
+        allow create: if isOwner(userId)
+          && isValidId(attemptId)
+          && incoming().keys().hasAll(['questionId', 'subjectId', 'chapterName', 'isCorrect', 'timestamp'])
+          && incoming().keys().size() == 5
+          && isValidPracticeAttempt(incoming());
+
+        allow delete: if isOwner(userId);
+        
+        // No client-side updates permitted for attempts - record of history
+        allow update: if false;
+      }
+
+      match /bookmarkedSections/{bookmarkId} {
+        allow get, list: if isOwner(userId);
+        
+        allow create: if isOwner(userId)
+          && isValidId(bookmarkId)
+          && incoming().keys().hasAll(['subjectId', 'number', 'heading', 'purpose'])
+          && incoming().keys().size() == 4
+          && isValidBookmarkedSection(incoming());
+
+        allow delete: if isOwner(userId);
+        
+        // Bookmark revisions not needed - toggle pattern deletes and recreates
+        allow update: if false;
+      }
+    }
+  }
+}

@@ -1,0 +1,435 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 1. Global safety net - default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // --- Hardened Global Primitive Helpers ---
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && isValidId(userId) && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 256;
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // --- Domain Helpers ---
+    function isValidSubjectId(sub) {
+      return sub is string && (
+        sub == 'AFM' || sub == 'FR' || sub == 'Audit' || sub == 'DT' || sub == 'IDT' || sub == 'IBS' ||
+        sub == 'AdvAcc' || sub == 'CorpLaw' || sub == 'Tax' || sub == 'Cost' || sub == 'AuditInter' || sub == 'FMSM' ||
+        sub == 'Accounts' || sub == 'Law' || sub == 'MathStats' || sub == 'Econ' ||
+        sub == 'CMAFoundLaw' || sub == 'CMAFoundAcc' || sub == 'CMAFoundMath' || sub == 'CMAFoundEcon' ||
+        sub == 'CMAInterLaw' || sub == 'CMAInterFA' || sub == 'CMAInterTax' || sub == 'CMAInterCost' ||
+        sub == 'CMAInterOMSM' || sub == 'CMAInterCAA' || sub == 'CMAInterFMDA' || sub == 'CMAInterMA' ||
+        sub == 'CMAFinalLaw' || sub == 'CMAFinalSFM' || sub == 'CMAFinalDT' || sub == 'CMAFinalSCM' ||
+        sub == 'CMAFinalCMA' || sub == 'CMAFinalCFR' || sub == 'CMAFinalIDT' || sub == 'CMAFinalSPBV'
+      );
+    }
+
+    function isValidCALevel(lvl) {
+      return lvl is string && (
+        lvl == 'foundation' || lvl == 'intermediate' || lvl == 'final' ||
+        lvl == 'cma_foundation' || lvl == 'cma_intermediate' || lvl == 'cma_final'
+      );
+    }
+
+    function isValidPracticeAttempt(data) {
+      return data.questionId is string 
+        && data.questionId.size() <= 128
+        && isValidSubjectId(data.subjectId)
+        && data.chapterName is string
+        && data.chapterName.size() <= 200
+        && data.isCorrect is bool
+        && data.timestamp is string
+        && data.timestamp.size() <= 64;
+    }
+
+    function isValidBookmarkedSection(data) {
+      return isValidSubjectId(data.subjectId)
+        && data.number is string
+        && data.number.size() <= 128
+        && data.heading is string
+        && data.heading.size() <= 256
+        && data.purpose is string
+        && data.purpose.size() <= 2000;
+    }
+
+    function isValidBookmarkedQuestion(data) {
+      return data.questionId is string
+        && data.questionId.size() >= 1
+        && data.questionId.size() <= 128
+        && isValidSubjectId(data.subjectId)
+        && data.attempt is string
+        && data.attempt.size() <= 32
+        && data.attemptLabel is string
+        && data.attemptLabel.size() <= 64
+        && data.questionNumber is string
+        && data.questionNumber.size() <= 32
+        && data.marks is int
+        && data.marks >= 1
+        && data.marks <= 100
+        && data.chapterName is string
+        && data.chapterName.size() <= 300
+        && data.topicTag is string
+        && data.topicTag.size() <= 300
+        && data.questionPreview is string
+        && data.questionPreview.size() <= 3000
+        && data.savedAt is string
+        && data.savedAt.size() <= 64;
+    }
+
+    function isValidUserConfig(data) {
+      return (!('updatedAt' in data) || (data.updatedAt is string && data.updatedAt.size() <= 64))
+        && (!('darkMode' in data) || data.darkMode is bool)
+        && (!('hydrationSoundEnabled' in data) || data.hydrationSoundEnabled is bool)
+        && (!('displayName' in data) || (data.displayName is string && data.displayName.size() <= 500))
+        && (!('phone' in data) || (data.phone is string && data.phone.size() <= 100))
+        && (!('motto' in data) || (data.motto is string && data.motto.size() <= 1000))
+        && (!('coursePreference' in data) || (data.coursePreference is string && data.coursePreference.size() <= 200))
+        && (!('emote' in data) || (data.emote is string && data.emote.size() <= 100))
+        && (!('examDate' in data) || (data.examDate is string && data.examDate.size() <= 100))
+        && (!('dailyGoalMinutes' in data) || (data.dailyGoalMinutes >= 0 && data.dailyGoalMinutes <= 1440))
+        && (!('uid' in data) || (data.uid is string && data.uid.size() <= 128))
+        && (!('email' in data) || (data.email is string && data.email.size() <= 256))
+        && (!('studentHandle' in data) || (data.studentHandle is string && data.studentHandle.size() <= 128))
+        && (!('displayHandle' in data) || (data.displayHandle is string && data.displayHandle.size() <= 128))
+        && (!('studyStatus' in data) || (data.studyStatus is string && data.studyStatus.size() <= 100))
+        && (!('activeSubject' in data) || (data.activeSubject is string && data.activeSubject.size() <= 64))
+        && (!('lastActiveAt' in data) || (data.lastActiveAt is string && data.lastActiveAt.size() <= 64))
+        && (!('privacyScope' in data) || (data.privacyScope is string && (data.privacyScope == 'public' || data.privacyScope == 'buddies' || data.privacyScope == 'private')))
+        && (!('shareHours' in data) || data.shareHours is bool)
+        && (!('shareAccuracy' in data) || data.shareAccuracy is bool)
+        && (!('shareStreak' in data) || data.shareStreak is bool)
+        && (!('todayFocusMinutes' in data) || (data.todayFocusMinutes is number && data.todayFocusMinutes >= 0 && data.todayFocusMinutes <= 1440))
+        && (!('totalFocusMinutes' in data) || (data.totalFocusMinutes is number && data.totalFocusMinutes >= 0 && data.totalFocusMinutes <= 500000))
+        && (!('practiceAccuracy' in data) || (data.practiceAccuracy is number && data.practiceAccuracy >= 0 && data.practiceAccuracy <= 100))
+        && (!('practiceQuestionsCount' in data) || (data.practiceQuestionsCount is number && data.practiceQuestionsCount >= 0 && data.practiceQuestionsCount <= 100000))
+        && (!('studyStreakDays' in data) || (data.studyStreakDays is number && data.studyStreakDays >= 0 && data.studyStreakDays <= 3650))
+        && (!('preferred_practice_time' in data) || (data.preferred_practice_time is string && data.preferred_practice_time.size() <= 16))
+        && (!('practice_email_enabled' in data) || data.practice_email_enabled is bool)
+        && (!('last_practice_email_date' in data) || (data.last_practice_email_date is string && data.last_practice_email_date.size() <= 32))
+        && (!('sent_practice_question_ids' in data) || (data.sent_practice_question_ids is list && data.sent_practice_question_ids.size() <= 500))
+        && (!('scheduled_practice_enabled' in data) || data.scheduled_practice_enabled is bool)
+        && (!('last_practice_screen_date' in data) || (data.last_practice_screen_date is string && data.last_practice_screen_date.size() <= 32))
+        && (!('practiced_question_ids' in data) || (data.practiced_question_ids is list && data.practiced_question_ids.size() <= 500))
+        && (!('time_budget_mode' in data) || (data.time_budget_mode is string && data.time_budget_mode.size() <= 32))
+        && (!('caLevel' in data) || isValidCALevel(data.caLevel));
+    }
+
+    function isValidTaskList(data) {
+      return data.id is string
+        && data.id.size() <= 128
+        && data.title is string
+        && data.title.size() <= 256
+        && (!('updated' in data) || (data.updated is string && data.updated.size() <= 128))
+        && (!('caLevel' in data) || data.caLevel == null || isValidCALevel(data.caLevel));
+    }
+
+    function isValidTask(data) {
+      return (!('id' in data) || (data.id is string && data.id.size() <= 128))
+        && (!('title' in data) || (data.title is string && data.title.size() <= 512))
+        && (!('notes' in data) || data.notes == null || (data.notes is string && data.notes.size() <= 5000))
+        && (!('due' in data) || data.due == null || (data.due is string && data.due.size() <= 128))
+        && (!('status' in data) || (data.status is string && (data.status == 'needsAction' || data.status == 'completed' || data.status == 'unachieved' || data.status == 'rescheduled')))
+        && (!('completed' in data) || data.completed == null || data.completed is bool || (data.completed is string && data.completed.size() <= 128))
+        && (!('priority' in data) || data.priority == null || (data.priority == 'High' || data.priority == 'Medium' || data.priority == 'Low'))
+        && (!('subjectCode' in data) || data.subjectCode == null || (data.subjectCode is string && data.subjectCode.size() <= 32))
+        && (!('cleanTitle' in data) || data.cleanTitle == null || (data.cleanTitle is string && data.cleanTitle.size() <= 512))
+        && (!('listId' in data) || data.listId == null || (data.listId is string && data.listId.size() <= 128))
+        && (!('caLevel' in data) || data.caLevel == null || isValidCALevel(data.caLevel));
+    }
+
+    function isValidFocusSession(data) {
+      return data.id is string
+        && data.id.size() <= 128
+        && data.duration is number
+        && data.duration >= 0
+        && data.duration <= 1440
+        && isValidSubjectId(data.subjectId)
+        && data.timestamp is string
+        && data.timestamp.size() <= 128
+        && (!('description' in data) || (data.description is string && data.description.size() <= 1000))
+        && (!('sessionType' in data) || (data.sessionType == 'work' || data.sessionType == 'break'));
+    }
+
+    function isValidPeerChatMessage(data) {
+      return data.id is string
+        && data.id.size() <= 128
+        && data.senderId is string
+        && data.senderId.size() <= 128
+        && data.senderName is string
+        && data.senderName.size() <= 512
+        && data.senderEmote is string
+        && data.senderEmote.size() <= 128
+        && data.receiverId is string
+        && data.receiverId.size() <= 128
+        && data.text is string
+        && data.text.size() <= 5000
+        && data.timestamp is string
+        && data.timestamp.size() <= 128
+        && (!('msgType' in data) || (data.msgType is string && (data.msgType == 'chat' || data.msgType == 'doubt' || data.msgType == 'request')))
+        && (!('subjectTag' in data) || (data.subjectTag is string && data.subjectTag.size() <= 64))
+        && (!('chapterTag' in data) || (data.chapterTag is string && data.chapterTag.size() <= 200))
+        && (!('isResolved' in data) || data.isResolved is bool)
+        && (!('resolvedBy' in data) || (data.resolvedBy is string && data.resolvedBy.size() <= 256));
+    }
+
+    function isValidStudyRoom(data) {
+      return data.id is string
+        && data.id.size() <= 128
+        && data.name is string
+        && data.name.size() <= 200
+        && data.subjectId is string
+        && data.subjectId.size() <= 64
+        && data.topic is string
+        && data.topic.size() <= 500
+        && data.isPrivate is bool
+        && (!('inviteCode' in data) || (data.inviteCode is string && data.inviteCode.size() <= 32))
+        && data.creatorId is string
+        && data.creatorId.size() <= 128
+        && data.creatorName is string
+        && data.creatorName.size() <= 256
+        && (!('memberIds' in data) || (data.memberIds is list && data.memberIds.size() <= 500))
+        && data.createdAt is string
+        && data.createdAt.size() <= 64;
+    }
+
+    function isValidUsernameRecord(data) {
+      return data.normalizedHandle is string
+        && data.normalizedHandle.size() >= 3
+        && data.normalizedHandle.size() <= 24
+        && data.normalizedHandle.matches('^[a-z0-9_.]+$')
+        && data.displayHandle is string
+        && data.displayHandle.size() >= 3
+        && data.displayHandle.size() <= 24
+        && data.displayHandle.matches('^[a-zA-Z0-9_.]+$')
+        && data.uid is string
+        && data.uid.size() <= 128
+        && (!('displayName' in data) || (data.displayName is string && data.displayName.size() <= 256))
+        && data.updatedAt is string
+        && data.updatedAt.size() <= 64;
+    }
+
+    function isValidFlashcardRating(data) {
+      return data.cardId is string
+        && data.cardId.size() <= 128
+        && isValidSubjectId(data.subjectId)
+        && data.rating is int
+        && data.rating >= 1
+        && data.rating <= 5
+        && (!('category' in data) || (data.category is string && data.category.size() <= 200))
+        && (!('conceptTitle' in data) || (data.conceptTitle is string && data.conceptTitle.size() <= 500))
+        && (!('statutoryRef' in data) || (data.statutoryRef is string && data.statutoryRef.size() <= 200))
+        && (!('updatedAt' in data) || (data.updatedAt is string && data.updatedAt.size() <= 64));
+    }
+
+    // --- Path Routes ---
+    match /usernames/{usernameId} {
+      allow get, list: if isSignedIn();
+      allow create: if isSignedIn()
+        && isValidId(usernameId)
+        && isValidUsernameRecord(incoming())
+        && incoming().normalizedHandle == usernameId
+        && incoming().uid == request.auth.uid
+        && !exists(/databases/$(database)/documents/usernames/$(usernameId));
+      allow update: if isSignedIn()
+        && isValidId(usernameId)
+        && isValidUsernameRecord(incoming())
+        && incoming().normalizedHandle == usernameId
+        && resource.data.uid == request.auth.uid
+        && incoming().uid == request.auth.uid;
+      allow delete: if isSignedIn()
+        && resource.data.uid == request.auth.uid;
+    }
+
+    match /peerChats/{chatId}/messages/{messageId} {
+      allow list, get: if isSignedIn()
+        && (chatId == 'group_lounge'
+            || chatId.startsWith('circle_')
+            || chatId.startsWith('room_')
+            || chatId.matches('^.*' + request.auth.uid + '.*$'));
+
+      allow create: if isSignedIn()
+        && isValidId(chatId)
+        && isValidId(messageId)
+        && incoming().keys().hasAll(['id', 'senderId', 'senderName', 'senderEmote', 'receiverId', 'text', 'timestamp'])
+        && incoming().keys().size() >= 7
+        && incoming().keys().size() <= 12
+        && isValidPeerChatMessage(incoming())
+        && incoming().senderId == request.auth.uid
+        && (chatId == 'group_lounge' 
+            || chatId.startsWith('circle_')
+            || chatId.startsWith('room_')
+            || chatId.matches('^.*' + request.auth.uid + '.*$'));
+
+      allow update: if isSignedIn()
+        && isValidId(chatId)
+        && isValidId(messageId)
+        && isValidPeerChatMessage(incoming())
+        && (chatId == 'group_lounge' 
+            || chatId.startsWith('circle_')
+            || chatId.startsWith('room_')
+            || chatId.matches('^.*' + request.auth.uid + '.*$'));
+
+      allow delete: if isSignedIn()
+        && resource.data.senderId == request.auth.uid;
+    }
+
+    match /studyRooms/{roomId} {
+      allow get, list: if isSignedIn();
+      allow create: if isSignedIn()
+        && isValidId(roomId)
+        && isValidStudyRoom(incoming())
+        && incoming().creatorId == request.auth.uid;
+      allow update: if isSignedIn()
+        && isValidId(roomId)
+        && isValidStudyRoom(incoming());
+      allow delete: if isSignedIn()
+        && resource.data.creatorId == request.auth.uid;
+    }
+
+    match /peerRequests/{requestId} {
+      allow get: if isSignedIn();
+      allow list: if isSignedIn() && (
+        resource == null 
+        || !('fromUserId' in resource.data) 
+        || resource.data.fromUserId == request.auth.uid 
+        || resource.data.toUserId == request.auth.uid
+      );
+      allow create: if isSignedIn() && isValidId(requestId) && (
+        !('fromUserId' in incoming()) 
+        || incoming().fromUserId == request.auth.uid
+      );
+      allow update: if isSignedIn() && isValidId(requestId) && (
+        !('fromUserId' in incoming()) 
+        || incoming().fromUserId == request.auth.uid 
+        || incoming().toUserId == request.auth.uid
+      );
+      allow delete: if isSignedIn() && (
+        resource == null 
+        || !('fromUserId' in resource.data) 
+        || resource.data.fromUserId == request.auth.uid 
+        || resource.data.toUserId == request.auth.uid
+      );
+    }
+
+    match /users/{userId}/peerRequests/{requestId} {
+      allow get, list: if isSignedIn();
+      allow create, update, delete: if isSignedIn() && (request.auth.uid == userId || request.auth.uid == incoming().fromUserId || request.auth.uid == incoming().toUserId);
+    }
+
+    match /users/{userId} {
+      // Allow any authenticated student to search/read profile configurations, keeping core details and handles searchable
+      allow get, list: if isSignedIn();
+      allow create, update: if isOwner(userId)
+        && isValidUserConfig(incoming());
+      allow delete: if isOwner(userId);
+
+      match /peers/{peerId} {
+        allow get, list: if isOwner(userId) || (isSignedIn() && request.auth.uid == peerId);
+        allow create, update: if isOwner(userId) || (isSignedIn() && request.auth.uid == peerId);
+        allow delete: if isOwner(userId) || (isSignedIn() && request.auth.uid == peerId);
+      }
+
+      match /practiceAttempts/{attemptId} {
+        allow get, list: if isOwner(userId) 
+          || (isSignedIn() && exists(/databases/$(database)/documents/users/$(userId)/peers/$(request.auth.uid)));
+        
+        allow create, update: if isOwner(userId)
+          && isValidId(attemptId)
+          && incoming().keys().hasAll(['questionId', 'subjectId', 'chapterName', 'isCorrect', 'timestamp'])
+          && isValidPracticeAttempt(incoming());
+
+        allow delete: if isOwner(userId);
+      }
+
+      match /bookmarkedSections/{bookmarkId} {
+        allow get, list: if isOwner(userId);
+        
+        allow create, update: if isOwner(userId)
+          && isValidId(bookmarkId)
+          && incoming().keys().hasAll(['subjectId', 'number', 'heading', 'purpose'])
+          && isValidBookmarkedSection(incoming());
+
+        allow delete: if isOwner(userId);
+      }
+
+      match /bookmarkedQuestions/{questionId} {
+        allow get, list: if isOwner(userId);
+
+        allow create, update: if isOwner(userId)
+          && isValidId(questionId)
+          && incoming().keys().hasAll(['questionId', 'subjectId', 'attempt', 'attemptLabel', 'questionNumber', 'marks', 'chapterName', 'topicTag', 'questionPreview', 'savedAt'])
+          && incoming().keys().hasOnly(['questionId', 'subjectId', 'attempt', 'attemptLabel', 'questionNumber', 'marks', 'chapterName', 'topicTag', 'questionPreview', 'savedAt'])
+          && isValidBookmarkedQuestion(incoming());
+
+        allow delete: if isOwner(userId);
+      }
+
+      match /revisionPlanner/{subjectId} {
+        allow get, create, update: if isOwner(userId)
+          && isValidId(subjectId);
+        allow list: if isOwner(userId);
+        allow delete: if isOwner(userId);
+      }
+
+      match /planner_settings/{settingId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId)
+          && isValidId(settingId);
+        allow delete: if isOwner(userId);
+      }
+
+      match /taskLists/{taskListId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId)
+          && isValidId(taskListId)
+          && isValidTaskList(incoming());
+        allow delete: if isOwner(userId);
+      }
+
+      match /tasks/{taskId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId)
+          && isValidId(taskId)
+          && isValidTask(incoming());
+        allow delete: if isOwner(userId);
+      }
+
+      match /focusSessions/{sessionId} {
+        allow get, list: if isOwner(userId)
+          || (isSignedIn() && exists(/databases/$(database)/documents/users/$(userId)/peers/$(request.auth.uid)));
+        allow create, update: if isOwner(userId)
+          && isValidId(sessionId)
+          && incoming().keys().hasAll(['id', 'duration', 'subjectId', 'timestamp'])
+          && isValidFocusSession(incoming());
+        allow delete: if isOwner(userId);
+      }
+
+      match /flashcardRatings/{ratingId} {
+        allow get, list: if isOwner(userId);
+        allow create, update: if isOwner(userId)
+          && isValidId(ratingId)
+          && incoming().keys().hasAll(['cardId', 'subjectId', 'rating'])
+          && isValidFlashcardRating(incoming());
+        allow delete: if isOwner(userId);
+      }
+    }
+  }
+}

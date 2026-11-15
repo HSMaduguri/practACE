@@ -1,0 +1,1707 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Custom theme colors of pract.CA aligned with Home Page (#051424 Obsidian Gold Academic) */
+  --color-cav-bg: var(--bg);
+  --color-cav-card: var(--bg-card);
+  --color-cav-card2: var(--bg-card2);
+  --color-cav-input: var(--bg-input);
+  --color-cav-text: var(--text);
+  --color-cav-muted: var(--text-muted);
+  --color-cav-dim: var(--text-dim);
+  --color-cav-border: var(--border-color);
+  --color-cav-sidebar: var(--sidebar);
+  --color-cav-sidebar-text: var(--sidebar-text);
+  --color-cav-accent: #f59e0b;
+  --color-cav-emerald: #10b981;
+  --color-cav-rose: #f43f5e;
+  --color-cav-amber: #f59e0b;
+
+  /* Harmonize Tailwind dark slate surfaces with Home Page navy-slate tones */
+  --color-slate-950: #081829;
+  --color-slate-900: #122131;
+  --color-slate-800: #1c2b3c;
+}
+
+:root {
+  --bg: #051424;
+  --bg-card: #122131;
+  --bg-card2: #0d1c2d;
+  --bg-input: #1c2b3c;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --border-color: #1c2b3c;
+  --sidebar: #0d1c2d;
+  --sidebar-text: #d4e4fa;
+}
+
+.dark {
+  --bg: #051424;
+  --bg-card: #122131;
+  --bg-card2: #0d1c2d;
+  --bg-input: #1c2b3c;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --border-color: #1c2b3c;
+  --sidebar: #0d1c2d;
+  --sidebar-text: #d4e4fa;
+}
+
+/* Universal Base Typography Consistency */
+html,
+body,
+#root {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+button,
+input,
+select,
+textarea,
+optgroup,
+option {
+  font-family: var(--font-sans);
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
+}
+
+@media print {
+  /* Hide the app navigation bar, sidebars, controls, and interactive action buttons (preserve running print headers) */
+  nav,
+  aside,
+  #app-header,
+  #global-navigation,
+  #header-actions,
+  button,
+  .action-btn,
+  [role="tablist"],
+  .no-print {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Explicitly ensure practCA running headers & footers are visible */
+  .practca-running-header,
+  .practca-running-footer,
+  header.practca-running-header,
+  footer.practca-running-footer {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+  }
+
+  /* Force exact color reproduction for print output */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 8mm !important;
+  }
+
+  /* Main content base layout & print-standard typography */
+  html,
+  body {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    font-size: 10.5pt !important;
+    line-height: 1.65 !important;
+    word-spacing: 0.025em !important;
+    letter-spacing: -0.005em !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #0f172a !important;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Professional CA Faculty Outer Page Border Frame */
+  .container,
+  .printable-page-frame {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 10mm 12mm !important;
+    border: 1.5px solid #0f172a !important;
+    border-radius: 4px !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+  }
+
+  /* Base Body Typography with Optimal CA Faculty Revision Spacing */
+  p, li, td, th, span, div, label {
+    font-size: 10pt !important;
+    line-height: 1.65 !important;
+    word-spacing: 0.025em !important;
+    letter-spacing: -0.005em !important;
+    color: #1e293b !important;
+    -webkit-text-fill-color: #1e293b !important;
+  }
+
+  ul, ol {
+    margin-top: 6px !important;
+    margin-bottom: 8px !important;
+    padding-left: 20px !important;
+  }
+
+  li {
+    margin-bottom: 4px !important;
+    line-height: 1.6 !important;
+    word-spacing: 0.025em !important;
+  }
+
+  /* Running Textbook Headings */
+  h1 {
+    font-size: 15pt !important;
+    line-height: 1.3 !important;
+    font-weight: 800 !important;
+    word-spacing: 0.04em !important;
+    letter-spacing: -0.01em !important;
+    color: #0f172a !important;
+    margin-top: 1.2em !important;
+    margin-bottom: 0.4em !important;
+    border-bottom: 1.5px solid #0f172a !important;
+    padding-bottom: 4px !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  h2 {
+    font-size: 13pt !important;
+    line-height: 1.3 !important;
+    font-weight: 800 !important;
+    word-spacing: 0.035em !important;
+    color: #0f172a !important;
+    margin-top: 1em !important;
+    margin-bottom: 0.35em !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  h3 {
+    font-size: 11.5pt !important;
+    line-height: 1.35 !important;
+    font-weight: 700 !important;
+    word-spacing: 0.03em !important;
+    color: #1e293b !important;
+    margin-top: 0.8em !important;
+    margin-bottom: 0.25em !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  h4, h5, h6 {
+    font-size: 10.5pt !important;
+    line-height: 1.4 !important;
+    font-weight: 700 !important;
+    word-spacing: 0.025em !important;
+    color: #334155 !important;
+    margin-top: 0.6em !important;
+    margin-bottom: 0.2em !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  small, .text-xs, .text-sm, sub, sup {
+    font-size: 9pt !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Top Banner Dark Header Exception */
+  .pdf-top-header,
+  .pdf-concept-header {
+    background-color: #0b1528 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    padding: 10px 16px !important;
+    border-radius: 4px 4px 0 0 !important;
+    margin-bottom: 0 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .pdf-top-header h1, .pdf-top-header h2, .pdf-top-header h3, .pdf-top-header div,
+  .pdf-concept-header h1, .pdf-concept-header h2, .pdf-concept-header h3 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    margin: 0 !important;
+  }
+
+  .pdf-top-header .pdf-header-right {
+    background-color: #050b14 !important;
+    border: 1px solid #1e293b !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+  }
+
+  /* Outer Subtopic Borders & Cards */
+  .chapter-block,
+  .sub-card,
+  .principle-card,
+  .concept-card,
+  .chapter-card,
+  .section-card,
+  .limit-card,
+  .statutory-card,
+  .pdf-concept-card,
+  .card {
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    border-radius: 4px !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    padding: 12px 14px !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.75rem !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+  }
+
+  /* TEXTBOOK CALLOUT / FORMULA / CODE BOXES */
+  .pdf-formula-box,
+  .formula-card,
+  .equation-block,
+  .alert-box,
+  .example-box,
+  pre,
+  code,
+  [class*="formula"] {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+    font-size: 10.5pt !important;
+    font-weight: 700 !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0.035em !important;
+    word-spacing: 0.09em !important;
+    padding: 12px 16px !important;
+    margin-top: 10px !important;
+    margin-bottom: 12px !important;
+    background-color: #f8fafc !important;
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    border-left: 4px solid #1e3a8a !important;
+    border-radius: 4px !important;
+    color: #0f172a !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Explanation for Formula Elements & Parameters ("Where:" legends) */
+  .pdf-concept-footnote,
+  .formula-legend,
+  .formula-where,
+  .formula-explanation,
+  div[class*="footnote"],
+  div[class*="legend"] {
+    margin-top: 8px !important;
+    padding-top: 8px !important;
+    border-top: 1px dashed #cbd5e1 !important;
+    font-size: 9.5pt !important;
+    line-height: 1.6 !important;
+    word-spacing: 0.03em !important;
+    letter-spacing: 0 !important;
+    color: #334155 !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    font-weight: 400 !important;
+  }
+
+  .formula-legend li,
+  .formula-where li,
+  .formula-explanation li {
+    margin-bottom: 4px !important;
+    line-height: 1.55 !important;
+    padding-left: 2px !important;
+  }
+
+  .formula-legend strong,
+  .formula-where strong,
+  .formula-explanation strong,
+  .formula-var {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    margin-right: 4px !important;
+  }
+
+  /* KaTeX Math Formatting */
+  .katex, .katex-display, .katex-html {
+    font-size: 1.05em !important;
+    line-height: 1.7 !important;
+    letter-spacing: 0.025em !important;
+    word-spacing: 0.06em !important;
+  }
+
+  /* Dark Header/Card Text Contrast Preservations */
+  .pdf-top-header *, .pdf-concept-header * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+  .pdf-top-header .pdf-brand-title { color: #fbbf24 !important; -webkit-text-fill-color: #fbbf24 !important; }
+  .pdf-top-header .pdf-doc-sub { color: #93c5fd !important; -webkit-text-fill-color: #93c5fd !important; }
+
+  /* Dark Mode Cards (preserves dark background and crisp white text where styled) */
+  .bg-slate-900, .bg-slate-950, .bg-indigo-950, .bg-black {
+    background-color: #0b1528 !important;
+    color: #ffffff !important;
+    border: 1px solid #1e293b !important;
+    padding: 12px 14px !important;
+    border-radius: 4px !important;
+  }
+  .bg-slate-900 *, .bg-slate-950 *, .bg-indigo-950 *, .bg-black * {
+    color: #f8fafc !important;
+  }
+
+  /* High-contrast Token Highlights */
+  .text-amber-400, .text-amber-300, .text-amber-500, .text-yellow-400, .text-yellow-500 {
+    color: #b45309 !important;
+    font-weight: 700 !important;
+  }
+  .bg-slate-900 .text-amber-400, .bg-slate-950 .text-amber-400, .bg-indigo-950 .text-amber-400 {
+    color: #fbbf24 !important;
+  }
+
+  .text-sky-400, .text-sky-300, .text-sky-500, .text-cyan-400, .text-cyan-500 {
+    color: #0369a1 !important;
+    font-weight: 700 !important;
+  }
+  .bg-slate-900 .text-sky-400, .bg-slate-950 .text-sky-400, .bg-indigo-950 .text-sky-400 {
+    color: #38bdf8 !important;
+  }
+
+  .text-emerald-400, .text-emerald-300, .text-emerald-500, .text-green-500 {
+    color: #047857 !important;
+    font-weight: 700 !important;
+  }
+  .bg-slate-900 .text-emerald-400, .bg-slate-950 .text-emerald-400, .bg-indigo-950 .text-emerald-400 {
+    color: #34d399 !important;
+  }
+
+  .text-rose-400, .text-rose-300, .text-rose-500, .text-red-500 {
+    color: #be123c !important;
+    font-weight: 700 !important;
+  }
+  .bg-slate-900 .text-rose-400, .bg-slate-950 .text-rose-400, .bg-indigo-950 .text-rose-400 {
+    color: #f43f5e !important;
+  }
+
+  /* Table & Image Page Break Avoidance */
+  table {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+    margin-bottom: 12px !important;
+    border: 1.5px solid #cbd5e1 !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tbody, tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  th {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+    font-weight: 800 !important;
+    border: 1px solid #cbd5e1 !important;
+    padding: 7px 10px !important;
+    font-size: 9.5pt !important;
+    word-spacing: 0.03em !important;
+  }
+
+  td {
+    color: #1e293b !important;
+    border: 1px solid #cbd5e1 !important;
+    padding: 7px 10px !important;
+    background-color: #ffffff !important;
+    font-size: 9.5pt !important;
+    word-spacing: 0.025em !important;
+  }
+
+  .text-emerald-400, .text-emerald-300, .text-emerald-500, .text-green-500,
+  [class*="bg-slate-9"] .text-emerald-400, [class*="bg-slate-9"] .text-emerald-300 {
+    color: #047857 !important;
+    -webkit-text-fill-color: #047857 !important;
+    font-weight: 700 !important;
+  }
+
+  .text-rose-400, .text-rose-300, .text-rose-500, .text-red-500,
+  [class*="bg-slate-9"] .text-rose-400, [class*="bg-slate-9"] .text-rose-300 {
+    color: #be123c !important;
+    -webkit-text-fill-color: #be123c !important;
+    font-weight: 700 !important;
+  }
+
+  /* Top Banner Dark Header Exception (preserves white text for top document banner) */
+  .pdf-top-header *, .pdf-concept-header * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+  .pdf-top-header .pdf-brand-title { color: #fbbf24 !important; -webkit-text-fill-color: #fbbf24 !important; }
+  .pdf-top-header .pdf-doc-sub { color: #93c5fd !important; -webkit-text-fill-color: #93c5fd !important; }
+
+  /* Standards on Auditing Direct Screen Print Neutralization */
+  #standards-printable-area,
+  #standards-on-auditing-container {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+  }
+  #standards-printable-area table {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+  }
+  #standards-printable-area th {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+  }
+  #standards-printable-area td {
+    color: #1e293b !important;
+    border-color: #e2e8f0 !important;
+  }
+}
+
+/* Balanced Dark Mode text contrast hierarchy (Primary -> Secondary -> Muted) */
+.dark .text-slate-900 {
+  color: #f8fafc !important;
+}
+.dark .text-slate-805,
+.dark .text-slate-800,
+.dark .text-slate-750,
+.dark .text-slate-705,
+.dark .text-slate-700 {
+  color: #f1f5f9 !important;
+}
+.dark .text-slate-655,
+.dark .text-slate-600 {
+  color: #e2e8f0 !important;
+}
+.dark .text-slate-550,
+.dark .text-slate-505,
+.dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+.dark .text-slate-450,
+.dark .text-slate-404,
+.dark .text-slate-400 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-gray-900 {
+  color: #f8fafc !important;
+}
+.dark .text-gray-800,
+.dark .text-gray-705,
+.dark .text-gray-700 {
+  color: #f1f5f9 !important;
+}
+.dark .text-gray-650,
+.dark .text-gray-600 {
+  color: #e2e8f0 !important;
+}
+.dark .text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+.dark .text-zinc-900 {
+  color: #f8fafc !important;
+}
+.dark .text-zinc-800,
+.dark .text-zinc-700 {
+  color: #f1f5f9 !important;
+}
+.dark .text-zinc-600 {
+  color: #e2e8f0 !important;
+}
+.dark .text-zinc-500 {
+  color: #94a3b8 !important;
+}
+
+/* Logical Balance: Keep text elements dark & highly readable ONLY inside the printable #report-preview-pane mockup */
+
+/* 1. Header/Titles styled text within #report-preview-pane */
+[id="report-preview-pane"] h1,
+[id="report-preview-pane"] h2,
+[id="report-preview-pane"] h3,
+[id="report-preview-pane"] h4,
+[id="report-preview-pane"] h5,
+[id="report-preview-pane"] h6,
+.dark [id="report-preview-pane"] h1,
+.dark [id="report-preview-pane"] h2,
+.dark [id="report-preview-pane"] h3,
+.dark [id="report-preview-pane"] h4 {
+  color: #090d16 !important;
+  font-weight: 700 !important;
+}
+
+/* 2. Bold Slate 950, 900, 850, 800 contexts inside report-preview-pane */
+[id="report-preview-pane"] .text-slate-950,
+[id="report-preview-pane"] .text-slate-900,
+[id="report-preview-pane"] .text-slate-800,
+.dark [id="report-preview-pane"] .text-slate-950,
+.dark [id="report-preview-pane"] .text-slate-900,
+.dark [id="report-preview-pane"] .text-slate-800 {
+  color: #090d16 !important;
+}
+
+/* 3. Medium Slate contexts inside report-preview-pane */
+[id="report-preview-pane"] .text-slate-700,
+[id="report-preview-pane"] .text-slate-600,
+[id="report-preview-pane"] .text-slate-500,
+[id="report-preview-pane"] .text-slate-400,
+.dark [id="report-preview-pane"] .text-slate-700,
+.dark [id="report-preview-pane"] .text-slate-600,
+.dark [id="report-preview-pane"] .text-slate-500,
+.dark [id="report-preview-pane"] .text-slate-400 {
+  color: #1e293b !important;
+}
+
+/* 4. Support for standard gray and zinc text styles inside report-preview-pane */
+[id="report-preview-pane"] .text-gray-900, [id="report-preview-pane"] .text-gray-800, [id="report-preview-pane"] .text-gray-700, [id="report-preview-pane"] .text-gray-600, [id="report-preview-pane"] .text-gray-500, [id="report-preview-pane"] .text-gray-400,
+[id="report-preview-pane"] .text-zinc-900, [id="report-preview-pane"] .text-zinc-800, [id="report-preview-pane"] .text-zinc-700, [id="report-preview-pane"] .text-zinc-600, [id="report-preview-pane"] .text-zinc-500, [id="report-preview-pane"] .text-zinc-400 {
+  color: #1a2333 !important;
+}
+
+/* 6. Special table adjustments specifically inside limits sheet and print preview panels */
+html:not(.dark) #limits-panel table th, 
+html:not(.dark) #limits-panel table td,
+html:not(.dark) #limits-panel .text-slate-600,
+html:not(.dark) #limits-panel .text-slate-500,
+html:not(.dark) #limits-panel .text-slate-400 {
+  color: #111827 !important;
+}
+
+/* In Dark Mode, ensure crisp off-whites for perfect readability against dark cards */
+.dark #limits-panel table th {
+  color: #cbd5e1 !important;
+}
+.dark #limits-panel table td,
+.dark #limits-panel .text-slate-600,
+.dark #limits-panel .text-slate-500,
+.dark #limits-panel .text-slate-400 {
+  color: #f1f5f9 !important;
+}
+
+/* If headers are in bg-slate-50, force high contrast text in light mode, and crisp text in dark mode */
+html:not(.dark) #limits-panel thead tr th {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+}
+.dark #limits-panel thead tr th {
+  color: #f8fafc !important;
+  font-weight: 800 !important;
+}
+
+/* Make sure syllabus details index dropdown choices do not render white text on white bg */
+.dark #blueprint-chapter-index .bg-white .text-slate-900,
+.dark #blueprint-chapter-index .bg-white .text-slate-800,
+.dark #blueprint-chapter-index .bg-white .text-slate-700,
+.dark #blueprint-chapter-index .bg-white .text-slate-600,
+.dark #blueprint-chapter-index .bg-white .text-slate-500,
+.dark #blueprint-chapter-index .bg-white span {
+  color: #090d16 !important;
+}
+
+/* --- PREMIUM CALENDAR, TIME & SELECT DROPDOWN STYLING --- */
+select,
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  color-scheme: dark;
+  font-variant-numeric: tabular-nums;
+  background-image: linear-gradient(180deg, rgba(20, 37, 58, 0.94) 0%, rgba(10, 22, 36, 0.98) 100%);
+  background-color: #0d1c2d;
+  color: #f8fafc;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 0.75rem;
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+    0 2px 8px -2px rgba(2, 6, 18, 0.55);
+  transition:
+    border-color 160ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 160ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 160ms ease;
+}
+
+select:hover:not(:disabled),
+input[type="date"]:hover:not(:disabled),
+input[type="time"]:hover:not(:disabled),
+input[type="datetime-local"]:hover:not(:disabled) {
+  border-color: rgba(245, 158, 11, 0.48);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+    0 4px 12px -2px rgba(2, 8, 20, 0.65);
+}
+
+select:focus,
+select:focus-visible,
+input[type="date"]:focus,
+input[type="date"]:focus-visible,
+input[type="time"]:focus,
+input[type="time"]:focus-visible,
+input[type="datetime-local"]:focus,
+input[type="datetime-local"]:focus-visible {
+  outline: none;
+  border-color: rgba(34, 211, 238, 0.65);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.14),
+    0 0 0 3px rgba(34, 211, 238, 0.16),
+    0 6px 16px -4px rgba(2, 8, 20, 0.75);
+}
+
+/* Custom Vector Chevron for all Select Dropdowns */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2rem !important;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23fbbf24' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, rgba(20, 37, 58, 0.94) 0%, rgba(10, 22, 36, 0.98) 100%) !important;
+  background-repeat: no-repeat, no-repeat !important;
+  background-position: right 0.6rem center, 0 0 !important;
+  background-size: 13px 13px, 100% 100% !important;
+}
+
+select:focus {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2322d3ee' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, rgba(22, 42, 66, 0.96) 0%, rgba(12, 26, 44, 0.99) 100%) !important;
+}
+
+option,
+select option,
+.dark select option {
+  color: #f8fafc !important;
+  background-color: #0d1c2d !important;
+  padding: 8px 12px;
+  font-weight: 600;
+}
+
+select option:checked,
+select option:hover {
+  color: #051424 !important;
+  background-color: #f59e0b !important;
+  font-weight: 700;
+}
+
+/* Native Date & Time Picker Indicator Icon Upgrade */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.9;
+  padding: 3px;
+  border-radius: 6px;
+  background-color: rgba(34, 211, 238, 0.12);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2322d3ee' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='18' x='3' y='4' rx='2' ry='2'/%3E%3Cline x1='16' x2='16' y1='2' y2='6'/%3E%3Cline x1='8' x2='8' y1='2' y2='6'/%3E%3Cline x1='3' x2='21' y1='10' y2='10'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 13px 13px;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.9;
+  padding: 3px;
+  border-radius: 6px;
+  background-color: rgba(245, 158, 11, 0.14);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23fbbf24' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 13px 13px;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+  background-color: rgba(245, 158, 11, 0.26);
+  transform: scale(1.06);
+}
+
+/* Highlight active sub-fields inside native date/time inputs */
+input[type="date"]::-webkit-datetime-edit-day-field:focus,
+input[type="date"]::-webkit-datetime-edit-month-field:focus,
+input[type="date"]::-webkit-datetime-edit-year-field:focus,
+input[type="time"]::-webkit-datetime-edit-hour-field:focus,
+input[type="time"]::-webkit-datetime-edit-minute-field:focus,
+input[type="time"]::-webkit-datetime-edit-ampm-field:focus {
+  background-color: #f59e0b;
+  color: #051424;
+  border-radius: 4px;
+  padding: 0 2px;
+  font-weight: 800;
+}
+
+/* Pomodoro zero-state subtle scale and color flash animation */
+@keyframes pomodoro-gauge-flash {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+    box-shadow: 0 0 2px rgba(244, 63, 94, 0.4);
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(244, 63, 94, 0.8), 0 0 20px rgba(244, 63, 94, 0.4);
+  }
+}
+
+.animate-gauge-flash {
+  animation: pomodoro-gauge-flash 1.2s infinite ease-in-out;
+}
+
+/* 7. Concept Focus View & Blueprint View Readability & Hierarchy Enhancements */
+.concept-focus-container,
+.blueprint-view {
+  color: #e2e8f0;
+}
+
+.concept-focus-container h1,
+.concept-focus-container h2,
+.concept-focus-container h3,
+.concept-focus-container h4,
+.concept-focus-container h5,
+.concept-focus-container h6,
+.concept-focus-container strong,
+.concept-focus-container b,
+.blueprint-view h1,
+.blueprint-view h2,
+.blueprint-view h3,
+.blueprint-view h4,
+.blueprint-view h5,
+.blueprint-view h6,
+.blueprint-view strong,
+.blueprint-view b {
+  color: #f8fafc;
+}
+
+.concept-focus-container p,
+.concept-focus-container li,
+.concept-focus-container td,
+.blueprint-view p,
+.blueprint-view li,
+.blueprint-view td {
+  color: #e2e8f0;
+}
+
+/* Force dark cards & backgrounds inside the Concept Focus Hub and Blueprint view for consistent dark surface grading */
+.concept-focus-container .bg-white,
+.concept-focus-container .bg-slate-50,
+.concept-focus-container .bg-slate-100,
+.concept-focus-container .bg-slate-200,
+.blueprint-view .bg-white,
+.blueprint-view .bg-slate-50,
+.blueprint-view .bg-slate-100,
+.blueprint-view .bg-slate-200 {
+  background-color: #122131 !important;
+}
+
+/* Ensure high contrast dark text on warm gold/amber buttons inside Concept Focus & Blueprint views */
+.concept-focus-container .bg-cav-accent,
+.concept-focus-container button.bg-cav-accent,
+.concept-focus-container .bg-amber-400,
+.concept-focus-container .bg-amber-500,
+.blueprint-view .bg-cav-accent,
+.blueprint-view button.bg-cav-accent,
+.blueprint-view .bg-amber-400,
+.blueprint-view .bg-amber-500 {
+  color: #051424 !important;
+  -webkit-text-fill-color: #051424 !important;
+}
+
+/* Ensure borders are dark instead of light slate/white */
+.concept-focus-container .border-slate-200,
+.concept-focus-container .border-slate-100,
+.concept-focus-container [class*="border-slate-"],
+.blueprint-view .border-slate-200,
+.blueprint-view .border-slate-100,
+.blueprint-view [class*="border-slate-"] {
+  border-color: #1c2b3c !important;
+}
+
+/* Make table headers stand out with deep background */
+.concept-focus-container th,
+.blueprint-view th {
+  background-color: #0d1c2d !important;
+  color: #ffffff !important;
+}
+
+/* Ensure highlights and warnings have subtle background tinting */
+.concept-focus-container .bg-amber-500\/5,
+.concept-focus-container .bg-amber-500\/10,
+.blueprint-view .bg-amber-500\/5,
+.blueprint-view .bg-amber-500\/10 {
+  background-color: rgba(245, 158, 11, 0.12) !important;
+}
+.concept-focus-container .bg-violet-500\/5,
+.concept-focus-container .bg-violet-500\/10,
+.blueprint-view .bg-violet-500\/5,
+.blueprint-view .bg-violet-500\/10 {
+  background-color: rgba(139, 92, 246, 0.12) !important;
+}
+.concept-focus-container .bg-emerald-500\/5,
+.concept-focus-container .bg-emerald-500\/10,
+.blueprint-view .bg-emerald-500\/5,
+.blueprint-view .bg-emerald-500\/10 {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+}
+
+/* --- STATUTORY DIRECTORY COLOR GRADING HIERARCHY (LIVE APP DARK THEME) --- */
+#sections-panel .statutory-coverage-title {
+  color: #fbbf24 !important;
+  -webkit-text-fill-color: #fbbf24 !important;
+}
+#sections-panel .statutory-coverage-view {
+  color: #38bdf8 !important;
+  -webkit-text-fill-color: #38bdf8 !important;
+}
+#sections-panel .statutory-pill-sections,
+#sections-panel .statutory-badge-sections {
+  background-color: rgba(79, 70, 229, 0.18) !important;
+  border-color: rgba(129, 140, 248, 0.45) !important;
+  color: #c7d2fe !important;
+  -webkit-text-fill-color: #c7d2fe !important;
+}
+#sections-panel .statutory-pill-schedules,
+#sections-panel .statutory-badge-schedules {
+  background-color: rgba(16, 185, 129, 0.16) !important;
+  border-color: rgba(52, 211, 153, 0.45) !important;
+  color: #6ee7b7 !important;
+  -webkit-text-fill-color: #6ee7b7 !important;
+}
+#sections-panel .statutory-pill-rules,
+#sections-panel .statutory-badge-rules {
+  background-color: rgba(245, 158, 11, 0.16) !important;
+  border-color: rgba(251, 191, 36, 0.45) !important;
+  color: #fde68a !important;
+  -webkit-text-fill-color: #fde68a !important;
+}
+#sections-panel .statutory-pill-notifications,
+#sections-panel .statutory-badge-notifications {
+  background-color: rgba(168, 85, 247, 0.18) !important;
+  border-color: rgba(192, 132, 252, 0.45) !important;
+  color: #e9d5ff !important;
+  -webkit-text-fill-color: #e9d5ff !important;
+}
+#sections-panel .statutory-pill-circular,
+#sections-panel .statutory-badge-circular {
+  background-color: rgba(14, 165, 233, 0.18) !important;
+  border-color: rgba(56, 189, 248, 0.45) !important;
+  color: #bae6fd !important;
+  -webkit-text-fill-color: #bae6fd !important;
+}
+#sections-panel .statutory-pill-ftp,
+#sections-panel .statutory-badge-ftp {
+  background-color: rgba(20, 184, 166, 0.18) !important;
+  border-color: rgba(45, 212, 191, 0.45) !important;
+  color: #99f6e4 !important;
+  -webkit-text-fill-color: #99f6e4 !important;
+}
+#sections-panel .statutory-heading {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+#sections-panel .statutory-purpose {
+  color: #cbd5e1 !important;
+  -webkit-text-fill-color: #cbd5e1 !important;
+}
+#sections-panel .statutory-subblock-title {
+  color: #fbbf24 !important;
+  -webkit-text-fill-color: #fbbf24 !important;
+}
+#sections-panel .statutory-subcode-badge {
+  background-color: rgba(30, 58, 138, 0.45) !important;
+  border-color: rgba(96, 165, 250, 0.4) !important;
+  color: #93c5fd !important;
+  -webkit-text-fill-color: #93c5fd !important;
+}
+#sections-panel .statutory-sub-heading {
+  color: #f8fafc !important;
+  -webkit-text-fill-color: #f8fafc !important;
+}
+#sections-panel .statutory-sub-purpose {
+  color: #cbd5e1 !important;
+  -webkit-text-fill-color: #cbd5e1 !important;
+}
+
+/* --- STATUTORY 2-COLUMN TABULAR MATRIX --- */
+.statutory-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.statutory-matrix-table thead tr th {
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #334155;
+  background-color: #0b1528;
+  color: #f8fafc !important;
+  -webkit-text-fill-color: #f8fafc !important;
+}
+
+.statutory-matrix-table tbody tr {
+  border-bottom: 1px solid #1e293b;
+  transition: background-color 0.15s ease;
+}
+
+.statutory-matrix-col-citation {
+  width: 28%;
+  vertical-align: top;
+  padding: 12px 14px;
+  border-right: 1px solid #1e293b;
+}
+
+.statutory-matrix-col-content {
+  width: 72%;
+  vertical-align: top;
+  padding: 12px 16px;
+}
+
+@media print {
+  .statutory-matrix-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto !important;
+  }
+  .statutory-matrix-table thead tr th {
+    background-color: #0d1526 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    padding: 6px 10px !important;
+    font-size: 8.5pt !important;
+  }
+  .statutory-matrix-table tbody tr {
+    border-bottom: 1px solid #cbd5e1 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    background-color: #ffffff !important;
+  }
+  .statutory-matrix-table tbody tr:nth-child(even) {
+    background-color: #f8fafc !important;
+  }
+  .statutory-matrix-col-citation {
+    width: 28% !important;
+    border: 1px solid #cbd5e1 !important;
+    padding: 8px 10px !important;
+    vertical-align: top !important;
+  }
+  .statutory-matrix-col-content {
+    width: 72% !important;
+    border: 1px solid #cbd5e1 !important;
+    padding: 8px 12px !important;
+    vertical-align: top !important;
+    color: #0f172a !important;
+  }
+}
+
+/* Force all input placeholders within blueprint-view (including chapter search index navigator) to be pure white with full opacity */
+.blueprint-view input::placeholder,
+.blueprint-view input::-webkit-input-placeholder,
+.blueprint-view input::-moz-placeholder,
+.blueprint-view input:-ms-input-placeholder,
+.blueprint-view .placeholder-white::placeholder,
+.blueprint-view [class*="placeholder-white"]::placeholder {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* --- UNIVERSAL FORMULA & KATEX STYLING --- */
+.katex,
+.katex *,
+.katex-html,
+.katex-html *,
+.katex-display,
+.katex-display *,
+.katex-block-wrapper,
+.katex-block-wrapper *,
+.katex-inline-wrapper,
+.katex-inline-wrapper *,
+.textbook-formula-display,
+.textbook-formula-display *,
+.textbook-calculation-block,
+.textbook-calculation-block * {
+  color: #f8fafc !important;
+  -webkit-text-fill-color: #f8fafc !important;
+}
+
+.katex .frac-line,
+.katex .sqrt .sqrt-line {
+  border-color: #ffffff !important;
+}
+
+sub,
+sup,
+.blueprint-view sub, 
+.blueprint-view sup,
+.concept-focus-container sub,
+.concept-focus-container sup,
+.textbook-formula-display sub,
+.textbook-formula-display sup,
+.textbook-calculation-block sub,
+.textbook-calculation-block sup,
+.bg-white sub,
+.bg-white sup {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-size: 0.725em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub,
+.blueprint-view sub,
+.textbook-formula-display sub,
+.textbook-calculation-block sub {
+  bottom: -0.22em;
+  font-weight: 600;
+}
+
+sup,
+.blueprint-view sup,
+.textbook-formula-display sup,
+.textbook-calculation-block sup {
+  top: -0.42em;
+  font-weight: 600;
+}
+
+/* Dynamic container line height adjustments */
+.textbook-formula-display {
+  line-height: 2.2 !important;
+  letter-spacing: 0.03em !important;
+}
+
+.textbook-calculation-block {
+  line-height: 2.2 !important;
+  letter-spacing: 0.02em !important;
+  font-family: var(--font-mono) !important;
+  white-space: pre-wrap !important; /* ensure proper line breaks */
+}
+
+/* --- PREMIUM NAVIGATION SIDEBAR COLLAPSE/EXPAND TRANSITIONS --- */
+.sidebar-transition {
+  transition: width 550ms cubic-bezier(0.16, 1, 0.3, 1), background-color 300ms ease, border-color 300ms ease !important;
+}
+
+/* Zero scrollbar utilities for seamless clean tabs */
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.no-scrollbar,
+.scrollbar-none {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Harmonize hardcoded pitch-dark hex surfaces across all pages with the Home Page (#051424 / #0d1c2d / #122131) palette */
+.bg-\[\#070a12\],
+.bg-\[\#080b14\],
+.bg-\[\#090d16\],
+.bg-\[\#0a0d16\],
+.bg-\[\#0a0d18\] {
+  background-color: #051424 !important;
+}
+
+.bg-\[\#0c0f1c\],
+.bg-\[\#0c101d\],
+.bg-\[\#0e1422\],
+.bg-\[\#0f1423\] {
+  background-color: #122131 !important;
+}
+
+/* --- PRACTCA WELCOME TRANSITION (7.50s TOTAL) ---
+   1) 0.00s - 3.75s: Spaced P, R, A, C, T + Plan., Revise., Analyse., Correct., Track. directly below each letter (0.75s per pair)
+   2) 3.75s - 4.50s: Subtitle words morph into a sleek horizontal golden line (0.75s)
+   3) 4.50s - 5.25s: P, R, A, C, and T come close together into "pract" while the line aligns under practCA (0.75s)
+   4) 5.25s - 6.00s: CA appears cleanly without glow (0.75s)
+   5) 6.00s - 6.75s: Book mark appears cleanly without glow (0.75s)
+   6) 6.75s - 7.50s: Arrow mark appears cleanly without glow (0.75s)
+*/
+
+/* Main letter smooth in-place glow entrance (p, r, a, c, t) — no transform property so horizontal convergence animation runs cleanly */
+@keyframes practca-letter-glow-in {
+  0% {
+    opacity: 0;
+    fill: #FFF0B3;
+    filter: drop-shadow(0 0 0px rgba(255, 224, 130, 0)) drop-shadow(0 0 0px rgba(234, 193, 90, 0));
+  }
+  40% {
+    opacity: 1;
+    fill: #FFF0B3;
+    filter: drop-shadow(0 0 14px rgba(255, 224, 130, 0.95)) drop-shadow(0 0 26px rgba(234, 193, 90, 0.65));
+  }
+  75% {
+    opacity: 1;
+    fill: #F5D77F;
+    filter: drop-shadow(0 0 6px rgba(255, 224, 130, 0.45)) drop-shadow(0 0 12px rgba(234, 193, 90, 0.25));
+  }
+  100% {
+    opacity: 1;
+    fill: #FFFFFF;
+    filter: drop-shadow(0 0 0px rgba(255, 224, 130, 0)) drop-shadow(0 0 0px rgba(234, 193, 90, 0));
+  }
+}
+
+/* Horizontal convergence of spaced P, R, A, C, T into compact "pract" (4.50s - 5.25s) */
+@keyframes practca-letter-converge {
+  0% {
+    transform: translate3d(var(--spaced-x, 0px), 0, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0, 0);
+  }
+}
+
+/* Subtitle word smooth in-place glow entrance (Plan., Revise., Analyse., Correct., Track.) — runs in parallel right below p, r, a, c, t */
+@keyframes practca-subtitle-word-glow-in {
+  0% {
+    opacity: 0;
+    filter: brightness(1) drop-shadow(0 0 0px rgba(255, 224, 130, 0)) drop-shadow(0 0 0px rgba(234, 193, 90, 0));
+  }
+  40% {
+    opacity: 1;
+    filter: brightness(1.38) drop-shadow(0 0 14px rgba(255, 224, 130, 0.92)) drop-shadow(0 0 24px rgba(234, 193, 90, 0.58));
+  }
+  75% {
+    opacity: 1;
+    filter: brightness(1.14) drop-shadow(0 0 6px rgba(255, 224, 130, 0.42)) drop-shadow(0 0 10px rgba(234, 193, 90, 0.22));
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1) drop-shadow(0 0 0px rgba(255, 224, 130, 0)) drop-shadow(0 0 0px rgba(234, 193, 90, 0));
+  }
+}
+
+/* Subtitle words morphing into a horizontal line (3.75s - 4.50s) */
+@keyframes practca-sub-words-to-line {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -6px, 0) scaleY(0.1);
+  }
+}
+
+/* Horizontal golden line forming from the subtitle (3.75s - 4.50s) and aligning under practCA as letters converge (4.50s - 5.25s) */
+@keyframes practca-sub-line-morph {
+  0% {
+    opacity: 0;
+    transform: translate3d(-125px, 4px, 0) scaleX(0.35);
+  }
+  50% {
+    opacity: 1;
+    transform: translate3d(-125px, 0, 0) scaleX(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0px, 0, 0) scaleX(1);
+  }
+}
+
+/* Clean, glow-free entrance for E, Book mark, and Arrow mark */
+@keyframes practca-clean-fade-in {
+  0% {
+    opacity: 0;
+    filter: none;
+  }
+  100% {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+/* Letter 'C' unified sequence: appears together with 'A' as "CA" (5.25s-5.65s), then flips smoothly to 2nd slot (5.70s-6.12s) */
+@keyframes practca-ace-c-seq {
+  0% {
+    opacity: 0;
+    transform: translate3d(-136px, 0, 0);
+  }
+  44% {
+    opacity: 1;
+    transform: translate3d(-136px, 0, 0);
+  }
+  52% {
+    opacity: 1;
+    transform: translate3d(-136px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0px, 0, 0);
+  }
+}
+
+/* Letter 'A' unified sequence: appears together with 'C' as "CA" (5.25s-5.65s), then flips smoothly to 1st slot (5.70s-6.12s) */
+@keyframes practca-ace-a-seq {
+  0% {
+    opacity: 0;
+    transform: translate3d(136px, 0, 0);
+  }
+  44% {
+    opacity: 1;
+    transform: translate3d(136px, 0, 0);
+  }
+  52% {
+    opacity: 1;
+    transform: translate3d(136px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0px, 0, 0);
+  }
+}
+
+/* Letter 'E' smooth entrance right as C and A finish flipping, completing "ACE" */
+@keyframes practca-ace-e-seq {
+  0% {
+    opacity: 0;
+    transform: translate3d(10px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0px, 0, 0);
+  }
+}
+
+.practca-anim-item {
+  transform-box: view-box;
+  transform-origin: center center;
+  opacity: 0;
+}
+
+/* Spaced Letter + Subtitle Word Pairs (0.75s each = 3.75s) -> Subtitle Line (0.75s) -> P-R-A-C-T Converge (0.75s) -> CA appear together (5.25s) -> C & A smooth quick flip (5.70s) -> E appears (6.08s) -> Book (6.55s) -> Arrow (7.10s) */
+.practca-anim-p {
+  --spaced-x: -140px;
+  animation:
+    practca-letter-glow-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.00s forwards,
+    practca-letter-converge 0.75s cubic-bezier(0.22, 1, 0.36, 1) 4.50s both;
+}
+
+.practca-anim-r {
+  --spaced-x: -45px;
+  animation:
+    practca-letter-glow-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.75s forwards,
+    practca-letter-converge 0.75s cubic-bezier(0.22, 1, 0.36, 1) 4.50s both;
+}
+
+.practca-anim-a {
+  --spaced-x: 71.5px;
+  animation:
+    practca-letter-glow-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 1.50s forwards,
+    practca-letter-converge 0.75s cubic-bezier(0.22, 1, 0.36, 1) 4.50s both;
+}
+
+.practca-anim-c {
+  --spaced-x: 157.5px;
+  animation:
+    practca-letter-glow-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 2.25s forwards,
+    practca-letter-converge 0.75s cubic-bezier(0.22, 1, 0.36, 1) 4.50s both;
+}
+
+.practca-anim-t {
+  --spaced-x: 263px;
+  animation:
+    practca-letter-glow-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 3.00s forwards,
+    practca-letter-converge 0.75s cubic-bezier(0.22, 1, 0.36, 1) 4.50s both;
+}
+
+.practca-anim-ace-c {
+  transform-box: view-box;
+  transform-origin: center center;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: practca-ace-c-seq 0.87s cubic-bezier(0.45, 0, 0.15, 1) 5.25s both;
+}
+
+.practca-anim-ace-a {
+  transform-box: view-box;
+  transform-origin: center center;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: practca-ace-a-seq 0.87s cubic-bezier(0.45, 0, 0.15, 1) 5.25s both;
+}
+
+.practca-anim-ace-e {
+  transform-box: view-box;
+  transform-origin: center center;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: practca-ace-e-seq 0.38s cubic-bezier(0.22, 1, 0.36, 1) 6.08s both;
+}
+
+.practca-anim-book {
+  transform-box: fill-box;
+  transform-origin: center center;
+  opacity: 0;
+  animation: practca-clean-fade-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) 6.55s forwards;
+}
+
+.practca-anim-arrow {
+  transform-box: fill-box;
+  transform-origin: center center;
+  opacity: 0;
+  animation: practca-clean-fade-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) 7.10s forwards;
+}
+
+/* Subtitle Words: Transition in parallel (0.75s each) right below their respective letters (p, r, a, c, t), then morph into a line at 3.75s */
+.practca-sub-words-group {
+  transform-box: fill-box;
+  transform-origin: center center;
+  animation: practca-sub-words-to-line 0.75s cubic-bezier(0.22, 1, 0.36, 1) 3.75s forwards;
+}
+
+.practca-sub-word {
+  transform-box: fill-box;
+  transform-origin: center center;
+  opacity: 0;
+}
+
+.practca-sub-p {
+  animation: practca-subtitle-word-glow-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.00s forwards;
+}
+
+.practca-sub-r {
+  animation: practca-subtitle-word-glow-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.75s forwards;
+}
+
+.practca-sub-a {
+  animation: practca-subtitle-word-glow-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 1.50s forwards;
+}
+
+.practca-sub-c {
+  animation: practca-subtitle-word-glow-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 2.25s forwards;
+}
+
+.practca-sub-t {
+  animation: practca-subtitle-word-glow-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 3.00s forwards;
+}
+
+.practca-sub-line {
+  transform-box: fill-box;
+  transform-origin: center center;
+  opacity: 0;
+  animation: practca-sub-line-morph 1.50s cubic-bezier(0.22, 1, 0.36, 1) 3.75s forwards;
+}
+
+.practca-sub-below-line {
+  transform-box: fill-box;
+  transform-origin: center center;
+  opacity: 0;
+  animation: practca-clean-fade-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) 4.50s forwards;
+}
+
+/* --- SUBTLE FADED-SLIDE ENTRANCE ANIMATION FOR NAVIGATION MENU ITEMS & VIEW TRANSITIONS --- */
+@keyframes nav-faded-slide-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(-10px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes nav-faded-slide-up {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes view-faded-slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.nav-faded-slide {
+  animation: nav-faded-slide-in 0.36s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--nav-idx, 0) * 22ms);
+}
+
+.nav-faded-slide-mobile {
+  animation: nav-faded-slide-up 0.34s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--nav-idx, 0) * 20ms);
+}
+
+.view-faded-slide {
+  animation: view-faded-slide-in 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* --- UNIFIED LOCKED HEADER & SCROLL-DIMINISH SYSTEM --- */
+.locked-internal-header {
+  position: sticky;
+  top: 0;
+  z-index: 35;
+  width: 100%;
+  padding-top: 4px;
+  padding-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  background: transparent;
+  transition: padding 180ms ease;
+}
+
+.locked-internal-header-card {
+  width: 100%;
+  min-height: 6.25rem;
+  position: relative;
+  border-radius: 1rem !important;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.16),
+    inset 0 -1px 0 0 rgba(15, 23, 42, 0.45),
+    0 14px 32px -8px rgba(2, 8, 20, 0.8);
+  transition: padding 180ms cubic-bezier(0.16, 1, 0.3, 1), gap 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+/* When page is scrolled down: diminish internal header padding slightly, hide subtitles, and keep controls in focus */
+main[data-header-scrolled="true"] .locked-internal-header {
+  padding-top: 2px;
+  padding-bottom: 8px;
+}
+
+main[data-header-scrolled="true"] .locked-internal-header-card {
+  min-height: 5rem !important;
+  border-radius: 1rem !important;
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  border-color: rgba(251, 191, 36, 0.5) !important;
+  box-shadow:
+    inset 0 1px 0 0 rgba(251, 191, 36, 0.22),
+    0 12px 32px -6px rgba(0, 0, 0, 0.85) !important;
+}
+
+main[data-header-scrolled="true"] .locked-internal-header-card > * + * {
+  margin-top: 0.65rem !important;
+}
+
+main[data-header-scrolled="true"] .header-diminish-hide {
+  display: none !important;
+}
+
+main[data-header-scrolled="true"] .header-diminish-row {
+  margin-top: 0.5rem !important;
+  padding-top: 0.5rem !important;
+}
+
+main[data-header-scrolled="true"] .header-diminish-btn {
+  padding-top: 0.45rem !important;
+  padding-bottom: 0.45rem !important;
+  min-height: 2.45rem !important;
+}
+
+main[data-header-scrolled="true"] .header-diminish-avatar {
+  width: 3rem !important;
+  height: 3rem !important;
+  font-size: 1.5rem !important;
+  border-radius: 0.75rem !important;
+}
+
+@media (max-width: 639px) {
+  .locked-internal-header {
+    padding-top: 2px;
+    padding-bottom: 8px;
+    margin-bottom: 6px;
+  }
+
+  .locked-internal-header-card {
+    padding: 1.25rem !important;
+    border-radius: 1rem !important;
+  }
+
+  main[data-header-scrolled="true"] .locked-internal-header-card {
+    padding: 0.95rem 1.1rem !important;
+  }
+
+  main[data-header-scrolled="true"] .header-diminish-mobile-hide {
+    display: none !important;
+  }
+}
+
+/* --- UX, ACCESSIBILITY & NUMERIC STABILITY ENHANCEMENTS --- */
+.font-mono {
+  font-variant-numeric: tabular-nums;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(245, 158, 11, 0.65);
+  outline-offset: 2px;
+}
+
+/* Compact 6px Global Scrollbar Profile (No Bulky Stepper Buttons or Horizontal Bleed) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(245, 158, 11, 0.65) rgba(11, 14, 27, 0.75);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(11, 14, 27, 0.75);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(251, 191, 36, 0.75) 0%,
+    rgba(245, 158, 11, 0.75) 50%,
+    rgba(249, 115, 22, 0.75) 100%
+  );
+  border-radius: 9999px;
+  min-height: 24px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #fcd34d 0%, #fbbf24 50%, #fb923c 100%);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #fde68a 0%, #f59e0b 50%, #f97316 100%);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Remove ugly browser-native number spin arrows globally; use 1.5D Sprint Board steppers */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Reusable 1.5D Sprint Board Increase/Decrease Stepper Button */
+.lmr-stepper-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.5rem;
+  background-color: rgba(2, 6, 23, 0.85);
+  border: 1px solid rgba(30, 41, 59, 0.9);
+  color: #fcd34d;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.lmr-stepper-btn:hover:not(:disabled) {
+  background-color: rgba(245, 158, 11, 0.22);
+  border-color: rgba(245, 158, 11, 0.55);
+  color: #fef08a;
+}
+
+.lmr-stepper-btn:active:not(:disabled) {
+  transform: scale(0.94);
+}
+
+.lmr-stepper-btn:disabled {
+  color: #334155;
+  border-color: rgba(15, 23, 42, 0.8);
+  cursor: not-allowed;
+}
+
+/* Hide native scrollbar on 1.5-Day LMR Sprint Board (replaced by custom precision scroll rail) */
+.lmr-no-native-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.lmr-no-native-scroll::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-faded-slide,
+  .nav-faded-slide-mobile,
+  .view-faded-slide {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

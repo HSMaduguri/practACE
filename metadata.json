@@ -1,0 +1,6 @@
+{
+  "name": "pract.CA",
+  "description": "Intelligent, exam-focused study assistant exclusively for CA Final (New Syllabus) students.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

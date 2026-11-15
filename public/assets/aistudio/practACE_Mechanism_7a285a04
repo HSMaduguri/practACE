@@ -1,0 +1,167 @@
+﻿practACE - Track and Report Mechanism
+
+
+
+
+Functions:
+
+
+Add Task
+The button will be redirected to the daily schedule, it helps to add a task for that particular date which cannot be older than the current system date (Today).
+
+
+Allocation Channel - Study
+When the mode is idle and the study button is clicked it shall activate the study mode, and when the study mode is on - and study button was clicked it shall move to idle, stop the time allocation to the linked task.
+
+
+Milestones
+Each milestone holds targets for a particular time period which is a minimum of 1 day. Based on the internal allocation, the total milestone targets will be moved across the days fixed for the milestone. Allocation across the days are shown in the daily Schedule of that particular date and also to the relevant weekly plan.
+
+
+24 Hour Target Clock
+List of all the targets on the active date in the daily schedule shall be linked to the slot system in the 24 hour target clock. The slots shall only be placed upon the user’s action and not automatically. The dropdown in slot shall hold the targets available for slot.
+
+
+Daily Schedule
+The page in the Daily Targets tab, where the targets with respect to the respective days were added and shown.
+
+
+Target Board
+Shall display all the targets on the daily schedule of the active date on the focus timer.
+Based on the time slotted in the 24 hour target clock, the aggregate of the time slotted for that particular task shall be shown as total planned time for the task in there.
+
+
+Focus Button
+Allows user to link the task for which the focus is clicked from the target board shall add the task to the target slot, turns on the study more and accumulation begins
+
+
+Target Slot
+The active task currently being under process with planned time, completed time and pending time. The planned time and the accumulated time shall be same as the what it is mentioned along with the target board of that particular task
+Unlink button in the target slot.
+
+
+24 Hour Daily Balance clock
+The visualisation of the ledger logs available for the particular active date on the focus time tab.
+All the logs added in Ledger History shall be linked to here for visual presentation based on the time frame of the log and allocation channel.
+
+
+Revision Report
+The report of all the study allocation where the status of the chapters of respective subjects shall be maintained as either completed, partially done, skipped or not done(blank).
+The logs added from the study allocation with respect to such subject and chapter of the respective relevance like baseline or revision or LMR in accordance to the task and process flow shall be presented.
+
+
+Start Focused Study 
+The button available in the Target slot when there is a particular task linked to the slot and used to resume the task which is started through linking but not marked complete.
+
+
+________________
+
+
+Procedural flow:
+
+
+Scenario 1: No Linked Task and fresh start of a task but not completed.
+Step 1: When the focus button is clicked for a target in the target board then the target shall be added to the target slot parallelly study mode is turned on.
+Step 2: When the target is added to the target slot, it shall start accumulating the time for that task by keeping in consideration of the planned time update it real time in the target board of the task too (to put it simple the accumulation being recorded in the target slot is the extended link to the same task in the target board)
+Step 3: When the study button is clicked in the allocation channel, then the time accumulation shall pause, time accumulated till then shall be logged in the ledger history.
+Step 4: The Ledger log shall be linked to the 24 hour daily balance clock
+Step 5:The ledger log shall be added to the revision report unless it is not a digital study block and the log shall be placed in the respective block either baseline or revision or LMR based on the task added
+
+
+Scenario 2(1): Task where it stopped as per Scenario 1 resumed from target slot but not completed
+Step 1: resume the study of the pending target from the Start focused study button from the target slot.
+Step 2: resume the time accumulation as a fresh log but the time of the new log shall be appended and not clobbed. I.e., the accumulated time shall not be disturbed and the resume in the accumulation of the time shall be added to the accumulation.
+Step 3: When the study button is clicked in the allocation channel, then the time accumulation shall pause, time accumulated till then shall be logged in the ledger history.
+Step 4: The Ledger log shall be linked to the 24 hour daily balance clock
+Step 5:The ledger log shall be added to the revision report unless it is not a digital study block and the log shall be placed in the respective block either baseline or revision or LMR based on the task added
+
+
+Scenario 2(2): Task where it stopped as per Scenario 1 resumed from study - allocation channel but not completed
+Step 1: resume the study of the pending target from the Study button from the Allocation channel.
+Step 2: resume the time accumulation as a fresh log but the time of the new log shall be appended and not clobbed. I.e., the accumulated time shall not be disturbed and the resume in the accumulation of the time shall be added to the accumulation.
+Step 3: When the study button is clicked in the allocation channel, then the time accumulation shall pause, time accumulated till then shall be logged in the ledger history.
+Step 4: The Ledger log shall be linked to the 24 hour daily balance clock
+Step 5:The ledger log shall be added to the revision report unless it is not a digital study block and the log shall be placed in the respective block either baseline or revision or LMR based on the task added
+
+
+
+
+
+
+Scenario 2(3): Task where it stopped as per Scenario 1 resumed from the grind - target board but not completed
+Step 1: resume the study of the pending target from the Grind button from the Allocation channel.
+Step 2: resume the time accumulation as a fresh log but the time of the new log shall be appended and not clobbed. I.e., the accumulated time shall not be disturbed and the resume in the accumulation of the time shall be added to the accumulation.
+Step 3: When the study button is clicked in the allocation channel, then the time accumulation shall pause, time accumulated till then shall be logged in the ledger history.
+Step 4: The Ledger log shall be linked to the 24 hour daily balance clock
+Step 5:The ledger log shall be added to the revision report unless it is not a digital study block and the log shall be placed in the respective block either baseline or revision or LMR based on the task added
+
+
+Scenario 3: Fresh task linked and marked complete
+Step 1: When the focus button is clicked for a target in the target board then the target shall be added to the target slot parallelly study mode is turned on.
+Step 2: When the target is added to the target slot, it shall start accumulating the time for that task by keeping in consideration of the planned time update it real time in the target board of the task too (to put it simple the accumulation being recorded in the target slot is the extended link to the same task in the target board)
+Step 3: When the Done button from the target slot block is clicked, then the time accumulation for the task linked shall stop, Status of the task in the target board shall be updated to completion, time accumulated till then shall be logged in the ledger history.
+Step 4: The Ledger log shall be linked to the 24 hour daily balance clock & Status in the 24 hour target clock shall be marked complete.
+Step 5:The ledger log shall be added to the revision report unless it is not a digital study block and the log shall be placed in the respective block either baseline or revision or LMR based on the task added and once the log is placed mark the target as done.
+
+
+Scenario 4(1): Task where it stopped as per Scenario 1 resumed from target slot and marked complete
+Step 1: resume the study of the pending target from the Start focused study button from the target slot.
+Step 2: resume the time accumulation as a fresh log but the time of the new log shall be appended and not clobbed. I.e., the accumulated time shall not be disturbed and the resume in the accumulation of the time shall be added to the accumulation.
+Step 3: When the Done button from the target slot block is clicked, then the time accumulation for the task linked shall stop, Status of the task in the target board shall be updated to completion, time accumulated till then shall be logged in the ledger history.
+Step 4: The Ledger log shall be linked to the 24 hour daily balance clock & Status in the 24 hour target clock shall be marked complete, the status of the target in the daily schedule shall be marked complete, then the status in weekly planner and target status in the milestone shall be marked complete.
+Step 5:The ledger log shall be added to the revision report unless it is not a digital study block and the log shall be placed in the respective block either baseline or revision or LMR based on the task added and once the log is placed mark the target as done.
+
+
+
+
+Scenario 4(2): Task where it stopped as per Scenario 1 resumed from the study - allocation channel and marked complete
+Step 1: resume the study of the pending target from the Study button from the Allocation channel.
+Step 2: resume the time accumulation as a fresh log but the time of the new log shall be appended and not clobbed. I.e., the accumulated time shall not be disturbed and the resume in the accumulation of the time shall be added to the accumulation.
+Step 3: When the Done button from the target slot block is clicked, then the time accumulation for the task linked shall stop, Status of the task in the target board shall be updated to completion, time accumulated till then shall be logged in the ledger history.
+Step 4: The Ledger log shall be linked to the 24 hour daily balance clock & Status in the 24 hour target clock shall be marked complete, the status of the target in the daily schedule shall be marked complete, then the status in weekly planner and target status in the milestone shall be marked complete.
+Step 5:The ledger log shall be added to the revision report unless it is not a digital study block and the log shall be placed in the respective block either baseline or revision or LMR based on the task added and once the log is placed mark the target as done.
+
+
+
+
+Scenario 4(3): Task where it stopped as per Scenario 1 resumed from the Grind- Target Board and marked complete
+Step 1: resume the study of the pending target from the Study button from the Allocation channel.
+Step 2: resume the time accumulation as a fresh log but the time of the new log shall be appended and not clobbed. I.e., the accumulated time shall not be disturbed and the resume in the accumulation of the time shall be added to the accumulation.
+Step 3: When the Done button from the target slot block is clicked, then the time accumulation for the task linked shall stop, Status of the task in the target board shall be updated to completion, time accumulated till then shall be logged in the ledger history.
+Step 4: The Ledger log shall be linked to the 24 hour daily balance clock & Status in the 24 hour target clock shall be marked complete, the status of the target in the daily schedule shall be marked complete, then the status in weekly planner and target status in the milestone shall be marked complete.
+Step 5:The ledger log shall be added to the revision report unless it is not a digital study block and the log shall be placed in the respective block either baseline or revision or LMR based on the task added and once the log is placed mark the target as done.
+
+
+practACE - 1.5 Sprint Algorithm
+1. Overview & Objective
+The practACE 1.5 Sprint Algorithm is designed to optimize revision schedules for competitive/professional exam preparations (FR, AFM, Audit, DT, IDT, IBS) during the critical 1.5-day exam sprint window. It dynamically calculates available study time, allocates proportionate target time based on subject categories (ABC Analysis), and dynamically re-balances schedules when targets are delayed or skipped.
+2. Sprint Schedule Boundaries
+2.1 Start Time Configuration
+* FR: 5 days prior to Exam Date (e.g., if FR exam is Nov 2, start on Oct 29).
+* AFM, Audit, DT, IDT, IBS: 7:00 PM on the day of the previous exam.
+2.2 End Time Configuration
+* Standard Target End Time: 9:30 AM on Exam Date.
+* Maximum Flexible End Time: Up to 12:30 PM on Exam Date (includes breaks).
+3. Time Allocation Framework
+3.1 Available Time Metrics
+* Total Available Time: (Start Time to 9:30 AM End Time) minus:
+   * 6 hours sleep time per day transition.
+   * 1 hour routine allowance on Start Day and Exam Day.
+   * 2 hours routine allowance on full study days.
+* Max Available Time: Total Available Time + 3 Flexible Hours (extending target end time from 9:30 AM to 12:30 PM).
+3.2 Proportionate Allocation Algorithm
+* Order of Priority: Sort revision targets using standard ABC Category Analysis.
+* Historical Baseline: Retrieve average completion time for each target from revision report logs.
+* Weight Calculation: Compute normalized weights for each chapter based on its category (A, B, C) and baseline historical time (Sum of all chapter weights = 1.0).
+* Time Assignment: Multiply each chapter weight by the Total Available Time.
+4. Dynamic Re-Balancing & Flexible Time Rules
+When real-time completion delays occur relative to the planned Max Proportionate Time, the system activates dynamic adjustment phases in sequential order:
+* Priority Level 1 (Extension): Extend target completion time dynamically up to 12:30 PM (Max Available Time) while preserving original chapter weights.
+* Priority Level 2 (Uniform Reduction): If Max Available Time (12:30 PM limit) is breached, apply an equal proportionate time reduction across all remaining chapters based on historical averages.
+* Priority Level 3 (Category Minimum Floor Limits):
+   * Category A Floor: Must retain at least 60% (absolute lower limit: 40%) of original allocated time.
+   * Category B Floor: Must retain at least 30% (absolute lower limit: 20%) of original allocated time.
+   * Category C Floor: Allocate remaining balance, establishing a minimum threshold per chapter of 25% (absolute lower limit: 10%–15%) of baseline time.
+5. System Constraints & User Overrides
+* Coverage Optimization Constraint: The total number of skipped chapters must be minimized. The system must maximize total chapter coverage prior to dropping targets.
+* Manual User Overrides: Allow users to manually toggle/skip specific chapters. Skipped chapters are excluded from dynamic time redistribution calculations.
